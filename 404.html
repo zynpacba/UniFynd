@@ -52,6 +52,7 @@
           <a href="/landing_page.html">Home</a>
           <a href="/browse_items.html">Browse Items</a>
           <a href="/about_us.html">About Us</a>
+          <a href="help_faq.html">FAQ</a>
 
           <!-- Logged-in User Only -->
           <a href="/profile.html" class="auth-only" hidden>My Profile</a>
@@ -59,26 +60,6 @@
 
         <!-- Guest User Actions -->
         <div class="nav-actions guest-only">
-          <form class="nav-search" action="/browse_items.html" method="get" role="search">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              aria-hidden="true"
-            >
-              <circle cx="10.8" cy="10.8" r="6.5"/>
-              <path d="m16 16 5 5"/>
-            </svg>
-
-            <input
-              type="search"
-              name="q"
-              placeholder="Search items..."
-              aria-label="Search items"
-            >
-          </form>
-
           <a href="/login.html" class="login-link">Log In</a>
 
           <a href="/register.html" class="btn btn-primary signup-link">
