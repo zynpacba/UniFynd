@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Manage your conversations and ownership requests on UniFynd.">
+  <title>UniFynd — Messages & Claims</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/messages_claims.css">
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  
+</head>
+
+<body>
+    <!-- ==================== NAVBAR ==================== -->
+    <header class="site-header">
+
+    <!-- ==================== NOTIFICATION POPOVER ==================== -->
+    <section
+        id="notification-popup"
+        class="notification-popup"
+        popover="auto"
+        aria-labelledby="notification-title"
+    >
+        <div class="section-header">
+        <div class="section-heading">
+            <h2 class="icon-heading" id="notification-title">
+            <i data-lucide="clock-3"></i>
+            Recent Activity
+            </h2>
+            <p>Your latest updates and notifications.</p>
+        </div>
+
+        <button
+            type="button"
+            class="notification-close"
+            popovertarget="notification-popup"
+            popovertargetaction="hide"
+            aria-label="Close notifications"
+        >
+            <i data-lucide="x"></i>
+        </button>
+        </div>
+
+        <div class="activity-list">
+
+        <!-- New AI Match -->
+        <article class="activity-item">
+            <div class="activity-icon activity-match">
+            <i data-lucide="sparkles"></i>
+            </div>
+
+            <div class="activity-information">
+            <h3>New AI match found</h3>
+            <p>A possible match was found for your Black Backpack.</p>
+            <time>2 hours ago</time>
+            </div>
+
+            <span class="unread-dot" aria-label="Unread"></span>
+        </article>
+
+        <!-- New Message -->
+        <article class="activity-item">
+            <div class="activity-icon activity-message">
+            <i data-lucide="message-square"></i>
+            </div>
+
+            <div class="activity-information">
+            <h3>New message received</h3>
+            <p>You received a message about your Black Backpack.</p>
+            <time>5 hours ago</time>
+            </div>
+
+            <span class="unread-dot" aria-label="Unread"></span>
+        </article>
+
+        <!-- Returned Item -->
+        <article class="activity-item">
+            <div class="activity-icon activity-returned">
+            <i data-lucide="package-check"></i>
+            </div>
+
+            <div class="activity-information">
+            <h3>Item successfully returned</h3>
+            <p>Wireless Earbuds was marked as returned.</p>
+            <time>Yesterday</time>
+            </div>
+        </article>
+
+        <!-- New Listing -->
+        <article class="activity-item">
+            <div class="activity-icon activity-listing">
+            <i data-lucide="clipboard-plus"></i>
+            </div>
+
+            <div class="activity-information">
+            <h3>New listing created</h3>
+            <p>You reported a lost Black Backpack at the campus library.</p>
+            <time>Nov 24, 2026</time>
+            </div>
+        </article>
+
+        </div>
+    </section>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="nav container">
+
+        <a href="landing_page.html" class="brand">
+        <img src="assets/magnifier.png" alt="" class="brand-icon">
+        <span>UniFynd<span class="brand-dot">.</span></span>
+        </a>
+
+        <div class="nav-content">
+
+        <div class="nav-links">
+            <a href="landing_page.html">Home</a>
+            <a href="browse_items.html">Browse Items</a>
+            <a href="about_us.html">About Us</a>
+            <a href="profile.html" class="active">My Profile</a>
+        </div>
+
+        <div class="nav-actions">
+
+            <button
+            type="button"
+            class="nav-notification"
+            popovertarget="notification-popup"
+            aria-label="Notifications"
+            >
+            <i data-lucide="bell"></i>
+            <span class="notification-dot"></span>
+            </button>
+
+            <a href="report_item.html" class="btn btn-amber">
+            <i data-lucide="plus"></i>
+            Create New Item
+            </a>
+
+        </div>
+        </div>
+
+    </nav>
+
+    </header>
+
+
+
+  <!-- ==================================================
+                       MAIN CONTENT
+  ================================================== -->
+  <main class="messages-page">
+
+    <!-- ==================== PAGE HEADING ==================== -->
+    <section class="messages-heading">
+      <div class="heading-icon">
+        <i class="fa-regular fa-comments"></i>
+      </div>
+
+      <div>
+        <h1>Messages & Claims</h1>
+        <p>
+          Manage your conversations
+          and ownership requests.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================================================
+                         SPLIT VIEW
+    ================================================== -->
+    <section class="messages-layout" id="messagesLayout">
+
+      <!-- ==================================================
+                        LEFT PANEL
+      ================================================== -->
+      <aside class="inbox-panel">
+
+        <!-- ==================== MAIN TABS ==================== -->
+        <div class="inbox-tabs">
+          <button type="button" class="inbox-tab is-active" data-tab="chats" aria-pressed="true">
+            <i class="fa-regular fa-comment"></i>
+            Chats
+            <span class="tab-count" id="chatCount"></span>
+          </button>
+
+          <button type="button" class="inbox-tab" data-tab="requests" aria-pressed="false">
+            <i class="fa-solid fa-user-check"></i>
+            Requests
+            <span class="tab-count" id="requestCount"></span>
+          </button>
+        </div>
+
+        <!-- ==================== REQUEST SUB-TABS ==================== -->
+        <div class="request-tabs" id="requestTabs" hidden>
+
+          <!-- Incoming Requests Button -->
+          <button type="button" class="request-tab is-active" data-filter="incoming" aria-pressed="true">
+            <span class="request-tab-title">Incoming Requests</span>
+            <span class="request-tab-count" id="incomingRequestCount"></span>
+          </button>
+
+          <!-- Sent Requests Button -->
+          <button type="button" class="request-tab" data-filter="sent" aria-pressed="false">
+            <span class="request-tab-title">Sent Requests</span>
+            <span class="request-tab-count" id="sentRequestCount"></span>
+          </button>
+
+        </div>
+
+        <!-- ==================== SEARCH ==================== -->
+        <div class="inbox-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="search" id="conversationSearch" placeholder="Search by item name..." aria-label="Search by item name">
+        </div>
+
+        <!-- ==================================================
+                           ACTIVE CHAT LIST
+        ================================================== -->
+        <div class="conversation-list" id="chatList"></div>
+
+        <!-- ==================================================
+                              REQUEST LISTS
+        ================================================== -->
+        <div class="request-lists" id="requestList" hidden>
+
+          <!-- ==================== INCOMING REQUESTS ==================== -->
+          <div class="conversation-list" id="incomingRequestList"></div>
+
+          <!-- ==================== SENT REQUESTS ==================== -->
+          <div class="conversation-list" id="sentRequestList" hidden></div>
+
+        </div>
+
+        <!-- ==================== EMPTY LIST STATE ==================== -->
+        <div class="empty-list-state" id="emptyListState" hidden>
+          <i class="fa-regular fa-folder-open"></i>
+          <p id="emptyListMessage"></p>
+        </div>
+      </aside>
+
+      <!-- ==================================================
+                       RIGHT PANEL — ACTIVE CHAT
+      ================================================== -->
+      <section class="chat-panel" id="chatPanel" aria-label="Conversation details" hidden>
+
+        <!-- ==================== CHAT HEADER ==================== -->
+        <header class="chat-header">
+            <div class="chat-heading">
+                <button type="button" class="mobile-back-button" aria-label="Back to inbox">
+                <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <img alt="" class="chat-item-image" id="chatItemImage">
+                <div class="chat-heading-info">
+                    <div class="chat-title">
+                        <h2 id="chatItemName"></h2>
+                        <span class="item-badge item-found" id="chatItemType"></span>
+                    </div>
+                    <p class="chat-user-info" id="chatUserInfo"></p>
+                    <div class="chat-item-meta">
+                        <p><i class="fa-solid fa-location-dot"></i><span id="chatItemLocation"></span></p>
+                        <p><i class="fa-regular fa-calendar"></i><span id="chatItemDate"></span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-header-actions">
+                <a href="item_detail.html" class="view-listing-button" id="chatListingLink">
+                    View Listing
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <!-- Only available to the listing owner -->
+                <button type="button" class="return-button" id="markReturnedButton">
+                <i class="fa-solid fa-check"></i>Mark as Returned</button>
+                
+            </div>
+        </header>
+
+        <!-- ==================== INITIAL VERIFICATION NOTE ==================== -->
+        <div class="verification-note">
+            <h4>
+                <i class="fa-solid fa-shield-halved"></i>
+                Initial Verification Note
+            </h4>
+            <p id="chatVerificationNote"></p>
+        </div>
+
+        <!-- ==================== MESSAGE HISTORY ==================== -->
+        <div class="chat-body" id="chatBody" role="log" aria-label="Message history" aria-live="polite"></div>
+
+        <!-- ==================== RETURNED STATE ==================== -->
+        <div class="closed-chat-notice" id="returnedState" hidden>
+            <div>
+                <strong>Conversation Closed</strong>
+                <p>This item has been returned. You can no longer send messages in this conversation.</p>
+            </div>
+        </div>
+
+        <!-- ==================== MESSAGE COMPOSER ==================== -->
+        <div class="chat-footer" id="chatFooter">
+          <form class="message-form" id="messageForm">
+            <input type="text" id="messageInput" name="message" placeholder="Type a message..." aria-label="Message" maxlength="2000" required>
+            <button type="submit" class="send-button" aria-label="Send message">
+              <i class="fa-regular fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+
+        <!-- ==================== PRIVACY REMINDER ==================== -->
+        <div class="privacy-reminder">
+          <div class="privacy-icon">
+            <i class="fa-solid fa-lock"></i>
+          </div>
+
+          <p>
+            <strong>Privacy Reminder:</strong>
+            Keep personal contact details private.
+            Use UniFynd messages and arrange item
+            handovers in safe campus locations.
+          </p>
+        </div>
+
+      </section>
+
+      <!-- ==================================================
+                     RIGHT PANEL — REQUEST DETAILS
+      ================================================== -->
+      <section class="request-panel" id="requestPanel" aria-label="Request details" hidden>
+
+        <!-- ==================== REQUEST HEADER ==================== -->
+        <header class="request-detail-header">
+          <div class="request-header-left">
+            <button type="button" class="mobile-back-button" aria-label="Back to inbox">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <div class="user-avatar">
+              <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div>
+              <div class="chat-title">
+                <h2 id="requestItemName"></h2>
+                <span class="item-badge item-found" id="requestItemType"></span>
+              </div>
+
+              <p class="chat-user-info" id="requestUserName"></p>
+            </div>
+          </div>
+
+          <span class="status-badge status-pending" id="requestHeaderStatus"></span>
+        </header>
+
+        <!-- ==================== ITEM SUMMARY ==================== -->
+        <div class="request-item-summary">
+          <img alt="" id="requestItemImage">
+
+          <div class="request-summary-info">
+            <h3 id="requestSummaryTitle"></h3>
+
+            <p>
+              <i class="fa-solid fa-location-dot"></i>
+              <span id="requestItemLocation"></span>
+            </p>
+
+            <p>
+              <i class="fa-regular fa-calendar"></i>
+              <span id="requestItemDate"></span>
+            </p>
+          </div>
+
+          <a href="item_detail.html" class="view-listing-button" id="requestListingLink">
+            View Listing
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <!-- ==================================================
+                           REQUEST DETAIL BODY
+        ================================================== -->
+        <div class="request-detail-body">
+
+          <!-- ==================== REQUEST STATUS ==================== -->
+          <div class="request-status-section">
+            <div class="request-status-icon" id="requestStatusIcon"></div>
+
+            <h2 id="requestStatusTitle"></h2>
+
+            <p id="requestStatusDescription"></p>
+          </div>
+
+          <!-- ==================== REQUEST INFORMATION ==================== -->
+          <div class="request-detail-card">
+            <h3>
+              <i class="fa-regular fa-file-lines"></i>
+              Request Information
+            </h3>
+
+            <div class="request-meta-grid">
+              <div class="request-meta-item">
+                <span id="requestPersonLabel"></span>
+                <strong id="requestPerson"></strong>
+              </div>
+
+              <div class="request-meta-item">
+                <span>Request Date</span>
+                <strong id="requestDate"></strong>
+              </div>
+
+              <div class="request-meta-item">
+                <span>Request Type</span>
+                <strong id="requestType"></strong>
+              </div>
+
+              <div class="request-meta-item">
+                <span>Direction</span>
+                <strong id="requestDirection"></strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================== VERIFICATION NOTE ==================== -->
+          <div class="request-verification-card">
+            <h3>
+              <i class="fa-solid fa-shield-halved"></i>
+              Verification Note
+            </h3>
+
+            <p id="requestVerificationNote"></p>
+
+            <div class="verification-private-label">
+              <i class="fa-solid fa-lock"></i>
+              Only visible to you and the other
+              participant.
+            </div>
+          </div>
+
+          <!-- ==================== INCOMING PENDING ACTIONS ==================== -->
+          <div class="request-action-section" id="incomingPendingActions">
+            <div class="request-actions">
+              <button type="button" class="decline-button" id="declineRequestButton">
+                <i class="fa-solid fa-xmark"></i>
+                Decline Request
+              </button>
+
+              <button type="button" class="approve-button" id="approveRequestButton">
+                <i class="fa-solid fa-check"></i>
+                Approve Request
+              </button>
+            </div>
+
+            <p class="request-action-hint">
+              Approving this request will unlock
+              messaging. It does not confirm
+              ownership of the item.
+            </p>
+          </div>
+
+          <!-- ==================== SENT PENDING ACTIONS ==================== -->
+          <div class="request-action-section" id="sentPendingActions" hidden>
+            <div class="request-notice notice-pending">
+              <i class="fa-solid fa-lock"></i>
+
+              <div>
+                <strong>Waiting for Approval</strong>
+                <p>
+                  Your request has been sent.
+                  You can start messaging once
+                  the listing owner approves
+                  your request.
+                </p>
+              </div>
+            </div>
+
+            <button type="button" class="cancel-request-button" id="cancelRequestButton">
+              Cancel Request
+            </button>
+          </div>
+
+          <!-- ==================== APPROVED ACTIONS ==================== -->
+          <div class="request-action-section" id="approvedRequestActions" hidden>
+            <div class="request-notice notice-approved">
+              <i class="fa-solid fa-circle-check"></i>
+
+              <div>
+                <strong>Request Approved</strong>
+                <p>
+                  Messaging is now available
+                  for this item. You can
+                  communicate with the other
+                  participant.
+                </p>
+              </div>
+            </div>
+
+            <button type="button" class="approve-button" id="openConversationButton">
+              <i class="fa-regular fa-comments"></i>
+              Open Conversation
+            </button>
+          </div>
+
+          <!-- ==================== DECLINED ACTIONS ==================== -->
+          <div class="request-action-section" id="declinedRequestActions" hidden>
+            <div class="request-notice notice-declined">
+              <i class="fa-regular fa-circle-xmark"></i>
+
+              <div>
+                <strong>Request Declined</strong>
+                <p>
+                  This request was declined.
+                  Messaging is not available
+                  for this request.
+                </p>
+              </div>
+            </div>
+
+            <a href="browse_items.html" class="browse-other-button">
+              Browse Other Items
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- ==================== CANCELLED ACTIONS ==================== -->
+          <div class="request-action-section" id="cancelledRequestActions" hidden>
+            <div class="request-notice notice-cancelled">
+              <i class="fa-regular fa-circle-xmark"></i>
+
+              <div>
+                <strong>Request Cancelled</strong>
+                <p>
+                  This request has been cancelled.
+                  Messaging is not available.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================== CLOSED LISTING STATE ==================== -->
+          <div class="request-action-section" id="closedRequestActions" hidden>
+            <div class="request-notice notice-cancelled">
+              <i class="fa-solid fa-lock"></i>
+
+              <div>
+                <strong>Listing Closed</strong>
+                <p>
+                  This item has been marked as
+                  returned. No new communication
+                  can be initiated.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ==================== PRIVACY REMINDER ==================== -->
+        <div class="privacy-reminder">
+          <div class="privacy-icon">
+            <i class="fa-solid fa-lock"></i>
+          </div>
+
+          <p>
+            <strong>Privacy Reminder:</strong>
+            Your verification details remain private.
+            Arrange item handovers in safe campus
+            locations.
+          </p>
+        </div>
+
+      </section>
+
+
+    <!-- ==================== EMPTY DETAIL PANEL ==================== -->
+    <section class="empty-detail-panel" id="emptyDetailPanel" aria-label="No conversation selected">
+        <div class="empty-detail-content">
+            <div class="empty-detail-icon">
+                <i class="fa-regular fa-comments"></i>
+            </div>
+            <h2 id="emptyDetailTitle">Select a Conversation</h2>
+            <p id="emptyDetailDescription">
+            Choose a conversation from your inbox to view messages.
+            </p>
+        </div>
+    </section>
+
+
+  </main>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+    lucide.createIcons();
+    </script>
+
+    <!-- Messages & Claims Functionality -->
+    <script type="module" src="js/messages_claims.js"></script>
+
+</body>
+</html>

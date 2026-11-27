@@ -414,4 +414,78 @@ The Help & FAQ page provides answers to frequently asked questions and allows us
 - Authentication and notification integration.
 - Final browser and responsive testing.
 
+# UniFynd — Messages & Claims
+
+## 1. Files
+
+- `messages_claims.html`
+- `css/messages_claims.css`
+- `ts/messages_claims.ts`
+- `js/messages_claims.js`
+
+The page uses HTML, CSS and Vanilla TypeScript. Run `npx tsc` after modifying the TypeScript file.
+
+## 2. Implemented Features
+
+- Item-specific conversations.
+- Incoming and sent requests.
+- Approve, decline and cancel requests.
+- Initial verification notes.
+- Message sending and conversation history.
+- Mark as Returned and conversation closure.
+- Search and dynamic counters.
+- Responsive layout.
+
+All functionalities currently operate using mock data.
+
+## 3. Data Models
+
+The following interfaces are defined in `messages_claims.ts`:
+
+| Model | Fields |
+|---|---|
+| Item | id, name, type, image, location, date, isOwner, returned |
+| Conversation | id, itemId, user, note, messages |
+| Message | text, direction, time, date |
+| Claim | id, itemId, user, direction, status, date, note, conversationId |
+
+These are frontend interfaces and may require adjustments during database integration.
+
+## 4. Business Rules
+
+- Users cannot send messages before their request is approved.
+- Each conversation must be associated with a specific item and its participants.
+- The same two users can have separate conversations for different items.
+- Only the listing owner can approve or decline requests.
+- Only the requester can cancel a pending request.
+- Only the listing owner can mark an item as returned.
+- When an item is returned, all associated conversations become read-only and pending requests are cancelled.
+- Conversation history must remain accessible.
+- Request approval does not confirm item ownership.
+
+## 5. Backend Requirements
+
+- [ ] Replace mock data with database and API integration.
+- [ ] Identify the authenticated user and their permissions.
+- [ ] Retrieve the user's conversations and messages.
+- [ ] Retrieve incoming and sent requests.
+- [ ] Receive new requests from the Item Details page.
+- [ ] Implement request approval, rejection and cancellation.
+- [ ] Automatically create a conversation upon request approval.
+- [ ] Store and retrieve messages.
+- [ ] Implement real-time or periodic message updates.
+- [ ] Update the listing status when marked as returned.
+- [ ] Close all associated conversations and cancel pending requests.
+- [ ] Prevent new requests and messages for returned items.
+- [ ] Implement unread message tracking and notifications.
+- [ ] Enforce all ownership, access and privacy rules on the server.
+- [ ] Connect Messages & Claims with Item Details, Browse Items and Profile.
+- [ ] Handle API errors and loading states.
+
+## 6. Important Notes
+
+Frontend state is currently temporary. All changes are reset when the page is refreshed.
+Frontend permission checks must also be enforced on the backend.
+Backend technology, database structure and API endpoints have not yet been finalized.
+
 
