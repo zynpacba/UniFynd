@@ -1,0 +1,1013 @@
+/* ========================================
+   ABOUT US PAGE - MAIN LAYOUT
+======================================== */
+
+.about-page {
+    background: var(--color-background);
+}
+
+.about-section {
+    min-height: calc(100svh - 91px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+
+    padding: 80px 0 100px;
+
+    scroll-margin-top: 91px;
+}
+
+.section-content {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* ========================================
+   SECTION 1 - ABOUT UNIFYND
+======================================== */
+
+.about-hero {
+    flex: 1;
+
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+
+    gap: 60px;
+}
+
+.about-content {
+    min-width: 0;
+}
+
+
+/* ========================================
+   EYEBROW
+======================================== */
+
+.about-eyebrow {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    margin-bottom: 20px;
+
+    color: var(--color-primary);
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.eyebrow-dot {
+    width: 9px;
+    height: 9px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--color-accent);
+}
+
+
+/* ========================================
+   MAIN TITLE
+======================================== */
+
+.about-title {
+    margin: 0 0 30px;
+
+    font-size: clamp(32px, 3.5vw, 44px);
+    font-weight: 800;
+
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+
+    color: var(--color-text);
+}
+
+.about-highlight {
+    display: inline-block;
+    position: relative;
+
+    color: var(--color-primary);
+}
+
+
+/* Yellow Underline */
+
+.about-highlight::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 100%;
+    height: 5px;
+
+    background: var(--color-accent);
+
+    border-radius: 70% 30% 70% 30%;
+
+    transform: rotate(-2deg);
+}
+
+
+/* ========================================
+   ABOUT DESCRIPTION
+======================================== */
+
+.about-description {
+    margin: 0 0 16px;
+
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 1.85;
+
+    color: var(--color-text-muted);
+}
+
+
+/* ========================================
+   MISSION & VISION
+======================================== */
+
+.purpose-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.purpose-card {
+    padding: 22px;
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+
+    box-shadow: 0 5px 18px rgba(37, 55, 70, .035);
+}
+
+.purpose-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    margin-bottom: 14px;
+
+    border-radius: 12px;
+
+    background: rgba(100, 204, 197, .17);
+    color: var(--color-primary);
+}
+
+.purpose-icon svg {
+    width: 23px;
+    height: 23px;
+}
+
+.purpose-card h2 {
+    margin: 0 0 8px;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    color: var(--color-text);
+}
+
+.purpose-card p {
+    margin: 0;
+
+    font-size: 13px;
+    line-height: 1.75;
+
+    color: var(--color-text-muted);
+}
+
+
+/* ========================================
+   ABOUT ILLUSTRATION
+======================================== */
+
+.about-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-width: 0;
+}
+
+.about-illustration {
+    display: block;
+
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* ========================================
+   COMMON SECTION HEADINGS
+======================================== */
+
+.about-section-heading {
+    max-width: 650px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.about-section-heading .about-eyebrow {
+    justify-content: center;
+}
+
+.about-section-heading h2 {
+    margin: 0 0 18px;
+
+    font-size: clamp(28px, 3vw, 36px);
+    font-weight: 800;
+
+    line-height: 1.25;
+    letter-spacing: -1px;
+
+    color: var(--color-text);
+}
+
+.about-section-heading h2 span {
+    color: var(--color-primary);
+}
+
+.about-section-heading p {
+    margin: 0;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: var(--color-text-muted);
+}
+
+
+/* ========================================
+   SECTION 2 - WHY UNIFYND
+======================================== */
+
+.why-section {
+    background: rgba(100, 204, 197, .065);
+
+    border-top: 1px solid rgba(23, 107, 115, .06);
+    border-bottom: 1px solid rgba(23, 107, 115, .06);
+}
+
+
+/* ========================================
+   FEATURE CARDS
+======================================== */
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 28px 24px;
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+
+    box-shadow: 0 6px 20px rgba(37, 55, 70, .04);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 12px 28px rgba(37, 55, 70, .08);
+}
+
+.feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 22px;
+
+    border-radius: 16px;
+
+    background: rgba(100, 204, 197, .17);
+    color: var(--color-primary);
+}
+
+.feature-icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.feature-card h3 {
+    margin: 0 0 12px;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    color: var(--color-text);
+}
+
+.feature-card p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: var(--color-text-muted);
+}
+
+
+/* ========================================
+   SECTION 3 - HOW IT WORKS
+======================================== */
+
+.how-section {
+    background: var(--color-background);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 35px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.step {
+    position: relative;
+
+    min-width: 0;
+
+    text-align: center;
+}
+
+
+/* ========================================
+   STEP VISUALS
+======================================== */
+
+.step-visual {
+    position: relative;
+
+    width: 110px;
+    height: 110px;
+
+    margin: 0 auto 26px;
+}
+
+.step-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 32px;
+
+    background: rgba(100, 204, 197, .17);
+    color: var(--color-primary);
+}
+
+.step-icon svg {
+    width: 48px;
+    height: 48px;
+}
+
+
+/* Amber Icon Background */
+
+.icon-amber {
+    background: var(--color-lost-bg);
+    color: var(--color-lost-text);
+}
+
+
+/* ========================================
+   STEP NUMBER
+======================================== */
+
+.step-number {
+    position: absolute;
+
+    left: -8px;
+    bottom: -8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    border: 3px solid var(--color-background);
+    border-radius: 50%;
+
+    background: var(--color-primary);
+    color: var(--color-surface);
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* ========================================
+   STEP CONNECTOR
+======================================== */
+
+.step:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    top: 55px;
+    left: calc(50% + 70px);
+
+    width: calc(100% + 35px - 140px);
+
+    border-top: 2px dashed rgba(23, 107, 115, .35);
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   STEP CONTENT
+======================================== */
+
+.step h3 {
+    margin: 0 0 12px;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    color: var(--color-text);
+}
+
+.step p {
+    max-width: 250px;
+
+    margin: 0 auto;
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: var(--color-text-muted);
+}
+
+
+/* ========================================
+   HOW IT WORKS - INFORMATION NOTE
+======================================== */
+
+.how-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    max-width: 720px;
+
+    margin: 45px auto 0;
+    padding: 14px 20px;
+
+    border: 1px solid rgba(23, 107, 115, .1);
+    border-radius: 12px;
+
+    background: rgba(100, 204, 197, .08);
+}
+
+.note-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 23px;
+    height: 23px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--color-found-bg);
+    color: var(--color-found-text);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.how-note p {
+    margin: 0;
+
+    font-size: 13px;
+    line-height: 1.6;
+
+    color: var(--color-text-muted);
+}
+
+
+/* ========================================
+   SCROLL HINT
+======================================== */
+
+.scroll-hint {
+    position: absolute;
+
+    left: 50%;
+    bottom: 30px;
+
+    transform: translateX(-50%);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 8px 12px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    color: var(--color-text-muted);
+
+    transition: color .2s ease;
+}
+
+.scroll-hint span {
+    font-size: 23px;
+    line-height: 1;
+
+    color: var(--color-primary);
+
+    transition: transform .2s ease;
+}
+
+.scroll-hint:hover {
+    color: var(--color-primary);
+}
+
+.scroll-hint:hover span {
+    transform: translateY(4px);
+}
+
+.scroll-hint[href="#about-unifynd"]:hover span {
+    transform: translateY(-4px);
+}
+
+
+/* ========================================
+   AUTHENTICATION VISIBILITY
+======================================== */
+
+.auth-only[hidden],
+.guest-only[hidden],
+.notification-dot[hidden] {
+    display: none;
+}
+
+
+/* ========================================
+   NAVBAR - NOTIFICATION BUTTON
+======================================== */
+
+.nav-notification {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+
+    color: var(--color-primary);
+
+    transition: background .2s;
+}
+
+.nav-notification:hover {
+    background: var(--color-border);
+}
+
+.nav-notification svg {
+    width: 22px;
+    height: 22px;
+}
+
+.notification-dot {
+    position: absolute;
+
+    top: 8px;
+    right: 8px;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--color-accent);
+}
+
+
+/* ========================================
+   NOTIFICATION POPOVER
+======================================== */
+
+.notification-popup {
+    position: fixed;
+
+    inset: 105px max(18px, calc((100vw - 1200px) / 2))
+           auto auto;
+
+    width: min(380px, calc(100vw - 36px));
+
+    margin: 0;
+    padding: 24px;
+
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+
+    background: var(--color-surface);
+    color: var(--color-text);
+
+    box-shadow: 0 12px 40px rgba(37, 55, 70, .12);
+}
+
+.notification-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid var(--color-border);
+}
+
+.notification-header h2 {
+    margin: 0 0 5px;
+
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.notification-header p {
+    margin: 0;
+
+    font-size: 13px;
+
+    color: var(--color-text-muted);
+}
+
+.notification-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 8px;
+
+    background: var(--color-background);
+    color: var(--color-primary);
+
+    font-size: 24px;
+}
+
+.notification-close:hover {
+    background: var(--color-border);
+}
+
+.notification-empty {
+    padding: 20px 0 5px;
+
+    text-align: center;
+
+    color: var(--color-text-muted);
+
+    font-size: 14px;
+}
+
+
+/* ========================================
+   CSS-ONLY MOBILE NAVIGATION
+======================================== */
+
+.nav-toggle {
+    display: none;
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN - TABLET
+======================================== */
+
+@media (max-width: 1024px) {
+
+    .about-hero {
+        gap: 35px;
+    }
+
+    .about-section {
+        padding: 65px 0 100px;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .feature-card {
+        padding: 25px;
+    }
+
+    .steps-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        row-gap: 45px;
+    }
+
+    .step::after {
+        display: none;
+    }
+
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN - NAVBAR
+======================================== */
+
+@media (max-width: 900px) {
+
+    .about-section {
+        min-height: calc(100svh - 75px);
+
+        scroll-margin-top: 75px;
+    }
+
+    .nav-toggle {
+        display: block;
+
+        position: absolute;
+
+        width: 1px;
+        height: 1px;
+
+        opacity: 0;
+    }
+
+    .nav-toggle:checked ~ .nav-content {
+        display: flex;
+    }
+
+    .nav-toggle:focus-visible + .menu-toggle {
+        outline: 3px solid var(--color-primary);
+        outline-offset: 4px;
+    }
+
+    .menu-toggle {
+        cursor: pointer;
+    }
+
+    .nav-notification {
+        align-self: flex-start;
+    }
+
+    .notification-popup {
+        top: 85px;
+    }
+
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN - MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .about-section {
+        min-height: auto;
+
+        padding: 60px 0 100px;
+    }
+
+    .about-hero {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .about-content {
+        text-align: center;
+    }
+
+    .about-eyebrow {
+        justify-content: center;
+
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    .about-title {
+        font-size: 36px;
+    }
+
+    .about-description {
+        font-size: 15px;
+    }
+
+    .about-illustration {
+        max-width: 400px;
+    }
+
+    .purpose-card {
+        text-align: left;
+    }
+
+    .about-section-heading {
+        margin-bottom: 35px;
+    }
+
+    .about-section-heading h2 {
+        font-size: 30px;
+    }
+
+    .about-section-heading p {
+        font-size: 15px;
+    }
+
+    .features-grid {
+        gap: 16px;
+    }
+
+    .feature-card {
+        padding: 22px;
+    }
+
+    .feature-card h3,
+    .step h3 {
+        font-size: 17px;
+    }
+
+    .step-visual {
+        width: 95px;
+        height: 95px;
+    }
+
+    .step-icon svg {
+        width: 42px;
+        height: 42px;
+    }
+
+    .how-note {
+        align-items: flex-start;
+    }
+
+    .scroll-hint {
+        bottom: 24px;
+    }
+
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN - SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+    .about-title {
+        font-size: 32px;
+    }
+
+    .about-section-heading h2 {
+        font-size: 27px;
+    }
+
+    .purpose-grid,
+    .features-grid,
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .purpose-card {
+        padding: 20px;
+    }
+
+    .feature-card {
+        align-items: center;
+
+        text-align: center;
+    }
+
+    .about-illustration {
+        max-width: 300px;
+    }
+
+    .steps-grid {
+        gap: 40px;
+    }
+
+    .about-actions {
+        flex-direction: column;
+    }
+
+    .about-actions .btn {
+        width: 100%;
+    }
+
+    .how-note {
+        padding: 12px;
+    }
+
+}
+
+
+/* ========================================
+   ACCESSIBILITY - REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .feature-card,
+    .scroll-hint,
+    .scroll-hint span {
+        transition: none;
+    }
+
+    .feature-card:hover,
+    .scroll-hint:hover span,
+    .scroll-hint[href="#about-unifynd"]:hover span {
+        transform: none;
+    }
+
+}

@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn about UniFynd, our mission, and how our campus-focused lost-and-found platform works.">
+  <title>UniFynd — About Us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/about_us.css">
+</head>
+
+<body>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <!-- Brand -->
+      <a href="/landing_page.html" class="brand" aria-label="UniFynd home">
+        <img src="/assets/magnifier.png" alt="" class="brand-icon">
+        <span>UniFynd<span class="brand-dot">.</span></span>
+      </a>
+
+      <!-- Mobile Menu -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" aria-controls="nav-content">
+      <label for="nav-toggle" class="menu-toggle" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Navigation Content -->
+      <div class="nav-content" id="nav-content">
+        <div class="nav-links">
+          <a href="/landing_page.html">Home</a>
+          <a href="/browse_items.html">Browse Items</a>
+          <a href="/about_us.html" class="active" aria-current="page">About Us</a>
+          <a href="/help_faq.html">FAQ</a>
+          <!-- Logged-in User Only -->
+          <a href="/profile.html" class="auth-only" hidden>My Profile</a>
+        </div>
+
+        <!-- Guest User Actions -->
+        <div class="nav-actions guest-only">
+          <a href="/login.html" class="login-link">Log In</a>
+          <a href="/register.html" class="btn btn-primary signup-link">
+            Sign Up
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <!-- Logged-in User Actions -->
+        <div class="nav-actions auth-only" hidden>
+          <button type="button" class="nav-notification" popovertarget="notification-popup" aria-label="Notifications">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 8a6 6 0 0 0-12 0 c0 7-3 7-3 9h18 c0-2-3-2-3-9"/>
+              <path d="M10 21h4"/>
+            </svg>
+            <span class="notification-dot" hidden></span>
+          </button>
+        </div>
+      </div>
+
+    </nav>
+
+    <!-- ==================== NOTIFICATION POPOVER ==================== -->
+    <section id="notification-popup" class="notification-popup" popover="auto" aria-labelledby="notification-title">
+      <div class="notification-header">
+        <div>
+          <h2 id="notification-title">Recent Activity</h2>
+          <p>Your latest updates and notifications.</p>
+        </div>
+        <button type="button" class="notification-close" popovertarget="notification-popup" popovertargetaction="hide" aria-label="Close notifications">&times;</button>
+      </div>
+
+      <!-- Notification data will come from the backend. -->
+      <div class="notification-empty">
+        <p>No notifications to display.</p>
+      </div>
+    </section>
+  </header>
+
+  <!-- ==================== MAIN PAGE ==================== -->
+  <main class="about-page">
+
+    <!-- ==================== 1. ABOUT UNIFYND ==================== -->
+    <section class="about-section" id="about-unifynd" aria-labelledby="about-heading">
+      <div class="about-hero container">
+
+        <!-- Left Side: About Content -->
+        <div class="about-content">
+          <div class="about-eyebrow">
+            <span class="eyebrow-dot"></span>
+            OUR STORY
+          </div>
+
+          <h1 class="about-title" id="about-heading">
+            About <span class="about-highlight">UniFynd</span>
+          </h1>
+
+          <p class="about-description">
+            UniFynd is a campus-focused lost-and-found platform
+            designed to help students, faculty, and university staff
+            reconnect with their belongings in one organized place.
+          </p>
+
+          <p class="about-description">
+            The idea behind UniFynd started with a simple problem:
+            lost and found notices are often scattered across group
+            chats, social media, and campus offices, making it
+            difficult to find what we are looking for.
+          </p>
+
+          <p class="about-description">
+            We aim to change that by bringing campus communities
+            together through a smarter, simpler, and safer
+            lost-and-found experience.
+          </p>
+
+          <!-- Mission & Vision -->
+          <div class="purpose-grid">
+
+            <!-- Our Mission -->
+            <article class="purpose-card">
+              <div class="purpose-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9"/>
+                  <circle cx="12" cy="12" r="5"/>
+                  <circle cx="12" cy="12" r="1"/>
+                  <path d="m12 12 8-8"/>
+                </svg>
+              </div>
+              <h2>Our Mission</h2>
+              <p>
+                To make finding and returning lost belongings
+                simpler, safer, and more efficient.
+              </p>
+            </article>
+
+            <!-- Our Vision -->
+            <article class="purpose-card">
+              <div class="purpose-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </div>
+              <h2>Our Vision</h2>
+              <p>
+                To build a connected campus community where
+                lost belongings can find their way back home.
+              </p>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Right Side: Illustration -->
+        <div class="about-visual">
+          <img src="/assets/about-us.png" alt="Campus-themed lost-and-found illustration" class="about-illustration">
+        </div>
+
+      </div>
+
+      <!-- Scroll to Why UniFynd -->
+      <a class="scroll-hint" href="#why-unifynd">
+        Discover why UniFynd
+        <span aria-hidden="true">↓</span>
+      </a>
+    </section>
+
+    <!-- ==================== 2. WHY UNIFYND ==================== -->
+    <section class="about-section why-section" id="why-unifynd" aria-labelledby="why-heading">
+      <div class="container section-content">
+
+        <!-- Section Heading -->
+        <div class="about-section-heading">
+          <div class="about-eyebrow">
+            <span class="eyebrow-dot"></span>
+            WHAT MAKES US DIFFERENT
+          </div>
+          <h2 id="why-heading">
+            Why <span>UniFynd?</span>
+          </h2>
+          <p>
+            More than a lost-and-found board.
+            Designed around the real needs of campus communities.
+          </p>
+        </div>
+
+        <!-- Feature Cards -->
+        <div class="features-grid">
+
+          <!-- Campus Focused -->
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m3 9 9-5 9 5-9 5-9-5Z"/>
+                <path d="M6 11v6c4 3 8 3 12 0v-6"/>
+                <path d="M21 9v7"/>
+              </svg>
+            </div>
+            <h3>Campus Focused</h3>
+            <p>
+              Built specifically for university communities.
+              Discover relevant listings by university,
+              campus, and location.
+            </p>
+          </article>
+
+          <!-- AI Semantic Matching -->
+          <article class="feature-card">
+            <div class="feature-icon icon-amber">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3 14.5 9.5 21 12 14.5 14.5 12 21 9.5 14.5 3 12 9.5 9.5 12 3Z"/>
+                <path d="M20 2v4M18 4h4"/>
+              </svg>
+            </div>
+            <h3>AI-Powered Matching</h3>
+            <p>
+              Semantic AI suggests possible matches between
+              lost and found reports, even when users
+              describe items differently.
+            </p>
+          </article>
+
+          <!-- Privacy -->
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="5" y="10" width="14" height="11" rx="2"/>
+                <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+                <path d="M12 14v3"/>
+              </svg>
+            </div>
+            <h3>Privacy First</h3>
+            <p>
+              Connect with other users without publicly
+              sharing your personal contact information.
+              You decide whether to accept contact requests.
+            </p>
+          </article>
+
+          <!-- Ownership Verification -->
+          <article class="feature-card">
+            <div class="feature-icon icon-amber">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/>
+                <path d="m8.5 12 2.5 2.5 4.5-5"/>
+              </svg>
+            </div>
+            <h3>Ownership Verification</h3>
+            <p>
+              Private item details help users verify
+              ownership and reduce the risk of
+              incorrect claims.
+            </p>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Scroll to How It Works -->
+      <a class="scroll-hint" href="#how-it-works">
+        See how it works
+        <span aria-hidden="true">↓</span>
+      </a>
+    </section>
+
+    <!-- ==================== 3. HOW IT WORKS ==================== -->
+    <section class="about-section how-section" id="how-it-works" aria-labelledby="how-heading">
+      <div class="container section-content">
+
+        <!-- Section Heading -->
+        <div class="about-section-heading">
+          <div class="about-eyebrow">
+            <span class="eyebrow-dot"></span>
+            SIMPLE STEPS
+          </div>
+          <h2 id="how-heading">
+            How <span>UniFynd</span> Works
+          </h2>
+          <p>
+            From reporting an item to getting it back.
+            Four simple steps to reconnect with your belongings.
+          </p>
+        </div>
+
+        <!-- Process Steps -->
+        <ol class="steps-grid">
+
+          <!-- Step 1: Report -->
+          <li class="step">
+            <div class="step-visual">
+              <div class="step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="5" y="3" width="14" height="18" rx="2"/>
+                  <path d="M8 7h8M8 11h8M8 15h4"/>
+                  <path d="M16 15v4M14 17h4"/>
+                </svg>
+              </div>
+              <span class="step-number">1</span>
+            </div>
+            <h3>Report an Item</h3>
+            <p>
+              Sign in and create a lost or found listing
+              with a description, category, and campus location.
+            </p>
+          </li>
+
+          <!-- Step 2: Find a Match -->
+          <li class="step">
+            <div class="step-visual">
+              <div class="step-icon icon-amber">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="10" cy="10" r="6"/>
+                  <path d="m14.5 14.5 6 6"/>
+                  <path d="M20 2v4M18 4h4"/>
+                </svg>
+              </div>
+              <span class="step-number">2</span>
+            </div>
+            <h3>Find a Match</h3>
+            <p>
+              Browse available listings or discover
+              possible matches suggested by our
+              AI-powered matching system.
+            </p>
+          </li>
+
+          <!-- Step 3: Send a Request -->
+          <li class="step">
+            <div class="step-visual">
+              <div class="step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m22 2-7 20-4-9-9-4 20-7Z"/>
+                  <path d="M22 2 11 13"/>
+                </svg>
+              </div>
+              <span class="step-number">3</span>
+            </div>
+            <h3>Send a Request</h3>
+            <p>
+              Found a possible match? Send a contact
+              or ownership request and wait for the
+              listing owner's approval.
+            </p>
+          </li>
+
+          <!-- Step 4: Reconnect -->
+          <li class="step">
+            <div class="step-visual">
+              <div class="step-icon icon-amber">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="m8 12 3 3 5-6"/>
+                </svg>
+              </div>
+              <span class="step-number">4</span>
+            </div>
+            <h3>Reconnect</h3>
+            <p>
+              Once your request is approved, communicate
+              privately, verify ownership, and arrange
+              a safe return.
+            </p>
+          </li>
+
+        </ol>
+
+        <!-- Important Information -->
+        <div class="how-note">
+          <span class="note-icon" aria-hidden="true">✓</span>
+          <p>
+            You can browse listings without an account.
+            AI matches are suggestions, not proof of ownership.
+          </p>
+        </div>
+      </div>
+
+      <!-- Back to Top -->
+      <a class="scroll-hint" href="#about-unifynd">
+        Back to top
+        <span aria-hidden="true">↑</span>
+      </a>
+    </section>
+
+  </main>
+
+</body>
+
+</html>

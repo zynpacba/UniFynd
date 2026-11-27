@@ -392,6 +392,26 @@ The Help & FAQ page provides answers to frequently asked questions and allows us
 **Status:** Frontend completed — backend integration and testing pending.
 
 
+# About Us Page
 
+**Status:** Frontend completed.
+
+**Files:**
+- `about_us.html`
+- `css/about_us.css`
+- `assets/about-us.png`
+
+**Features:**
+- Project introduction, mission, and vision.
+- Campus-focused approach, AI semantic matching,
+  privacy, and ownership verification.
+- Four-step How It Works guide.
+- Section navigation and back-to-top links.
+- Responsive design and custom illustration.
+- Guest and authenticated navbar layouts.
+
+**Pending:**
+- Authentication and notification integration.
+- Final browser and responsive testing.
 
 
