@@ -285,3 +285,53 @@ The IDs are sample values and must be assigned dynamically during backend integr
 - AI matching integration: Pending.
 
 Compile `profile.ts` into `js/profile.js` before running the page.
+
+
+# UniFynd — Profile Settings Page
+
+## Overview
+
+The Profile Settings page allows authenticated users to manage their personal information, university and campus details, and account password.
+
+## Files
+
+- `profile_settings.html` — Page structure and forms.
+- `css/profile_settings.css` — Page styling and responsive layout.
+- `ts/profile_settings.ts` — Client-side interactions and form validation.
+- `js/profile_settings.js` — Compiled JavaScript.
+- `assets/header.png` — Reusable campus header illustration.
+
+## Features
+
+- Account information management.
+- University and campus selection.
+- Password change form.
+- Show/hide password functionality.
+- Required field and email format validation.
+- Minimum password length and password matching validation.
+- Active sidebar navigation.
+- Native notification popover.
+- Responsive design.
+
+## Dependencies
+
+- `base.css`
+- `navbar.css`
+- `profile.css`
+- Lucide Icons
+- Google Fonts (DM Sans and Inter)
+
+## Backend Integration — TODO
+
+- Implement authentication and access control.
+- Retrieve and update user account information.
+- Verify the current password and securely update the password.
+- Implement email change verification.
+- Retrieve university, campus, and notification data from the database.
+- Perform server-side validation and return appropriate success or error responses.
+
+## Current Status
+
+Frontend implementation is prepared. Account information and notifications currently use sample data. Form validation is implemented, but account and password changes require backend integration.
+
+TypeScript compilation and browser testing are pending.

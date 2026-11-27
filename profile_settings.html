@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Manage your UniFynd account information, password and campus preferences.">
+
+    <title>UniFynd — Profile Settings</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/profile_settings.css">
+
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+</head>
+
+<body>
+    <!-- ==================== NAVBAR ==================== -->
+    <header class="site-header">
+        <!-- Notification Popover THE DATA WILL BE CAME FROM DATABASE-->
+        <section id="notification-popup" class="notification-popup profile-card" popover="auto" aria-labelledby="notification-title">
+            <div class="section-header">
+                <div class="section-heading">
+                    <h2 class="icon-heading" id="notification-title"><i data-lucide="clock-3"></i> Recent Activity</h2>
+                    <p>Your latest updates and notifications.</p>
+                </div>
+                <button type="button" class="notification-close" popovertarget="notification-popup" popovertargetaction="hide" aria-label="Close notifications">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="activity-list">
+                <!-- New AI Match -->
+                <article class="activity-item">
+                    <div class="activity-icon activity-match"><i data-lucide="sparkles"></i></div>
+                    <div class="activity-information">
+                        <h3>New AI match found</h3>
+                        <p>A possible match was found for your Black Backpack.</p>
+                        <time>2 hours ago</time>
+                    </div>
+                    <span class="unread-dot" aria-label="Unread"></span>
+                </article>
+                <!-- New Message -->
+                <article class="activity-item">
+                    <div class="activity-icon activity-message"><i data-lucide="message-square"></i></div>
+                    <div class="activity-information">
+                        <h3>New message received</h3>
+                        <p>You received a message about your Black Backpack.</p>
+                        <time>5 hours ago</time>
+                    </div>
+                    <span class="unread-dot" aria-label="Unread"></span>
+                </article>
+                <!-- Returned Item -->
+                <article class="activity-item">
+                    <div class="activity-icon activity-returned"><i data-lucide="package-check"></i></div>
+                    <div class="activity-information">
+                        <h3>Item successfully returned</h3>
+                        <p>Wireless Earbuds was marked as returned.</p>
+                        <time>Yesterday</time>
+                    </div>
+                </article>
+                <!-- New Listing -->
+                <article class="activity-item">
+                    <div class="activity-icon activity-listing"><i data-lucide="clipboard-plus"></i></div>
+                    <div class="activity-information">
+                        <h3>New listing created</h3>
+                        <p>You reported a lost Black Backpack at the campus library.</p>
+                        <time>Nov 24, 2026</time>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Main Navigation -->
+        <nav class="nav container">
+            <a href="landing_page.html" class="brand">
+                <img src="assets/magnifier.png" alt="" class="brand-icon">
+                <span>UniFynd<span class="brand-dot">.</span></span>
+            </a>
+
+            <div class="nav-content">
+                <div class="nav-links">
+                    <a href="landing_page.html">Home</a>
+                    <a href="browse_items.html">Browse Items</a>
+                    <a href="about_us.html">About Us</a>
+                    <a href="profile.html">My Profile</a>
+                </div>
+
+                <div class="nav-actions">
+                    <button type="button" class="nav-notification" popovertarget="notification-popup" aria-label="Notifications">
+                        <i data-lucide="bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==================== MAIN PAGE ==================== -->
+    <main class="settings-page container">
+
+        <!-- ==================== PAGE HEADER ==================== -->
+        <section class="settings-header">
+
+            <div class="settings-header-content">
+                <a href="profile.html" class="back-profile">
+                    <i data-lucide="arrow-left"></i>
+                    Back to My Profile
+                </a>
+
+                <h1>Profile Settings</h1>
+            </div>
+
+            <!-- Campus Illustration -->
+            <div class="page-header-illustration">
+                <img src="assets/header.png" alt="">
+            </div>
+
+        </section>
+
+        <!-- ==================== SETTINGS LAYOUT ==================== -->
+        <div class="settings-layout">
+
+            <!-- ==================== SIDEBAR ==================== -->
+            <aside class="settings-sidebar">
+                <nav aria-label="Settings navigation">
+                    <a href="#account" class="settings-nav-link">
+                        <i data-lucide="user-round"></i>
+                        <span>Account</span>
+                    </a>
+                    <a href="#password" class="settings-nav-link">
+                        <i data-lucide="lock-keyhole"></i>
+                        <span>Password</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- ==================== SETTINGS CONTENT ==================== -->
+            <div class="settings-content">
+
+                <!-- ==================== ACCOUNT INFORMATION ==================== -->
+                <section class="settings-card" id="account">
+                    <div class="settings-card-header">
+                        <div class="settings-icon"><i data-lucide="user-round"></i></div>
+                        <div class="settings-heading">
+                            <h2>Account Information</h2>
+                            <p>Update your personal and campus details.</p>
+                        </div>
+                    </div>
+
+                    <form id="account-form" method="post">
+                        <div class="settings-form-grid two-columns">
+                            <!-- First Name -->
+                            <div class="form-group">
+                                <label for="first-name">First Name</label>
+                                <input type="text" id="first-name" name="first_name" value="Elif" placeholder="first name" maxlength="50" required>
+                            </div>
+
+                            <!-- Last Name -->
+                            <div class="form-group">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" id="last-name" name="last_name" value="Demir" placeholder="last name" autocomplete="family-name" maxlength="50" required>
+                            </div>
+                        </div>
+
+                        <div class="settings-form-grid three-columns">
+                            <!-- Email Address -->
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" value="elif.demir@example.com" placeholder="email" autocomplete="email" required>
+                            </div>
+
+                            <!-- University -->
+                            <div class="form-group">
+                                <label for="university">University</label>
+                                <select id="university" name="university" required>
+                                    <option value="" disabled>Select your university</option>
+                                    <option value="medipol" selected>Istanbul Medipol University</option>
+                                </select>
+                            </div>
+
+                            <!-- Campus -->
+                            <div class="form-group">
+                                <label for="campus">Campus</label>
+                                <select id="campus" name="campus" required>
+                                    <option value="" disabled>Select your campus</option>
+                                    <option value="kavacik" selected>Kavacik Campus</option>
+                                    <option value="halic">Halic Campus</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="settings-form-footer">
+                            <p class="settings-note">
+                                <i data-lucide="shield-check"></i>
+                                Your email address is not displayed publicly.
+                            </p>
+                            <button type="button" class="btn btn-primary settings-button" id="save-account">Save Changes</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- ==================== CHANGE PASSWORD ==================== -->
+
+                <section class="settings-card" id="password">
+                    <div class="settings-card-header">
+                        <div class="settings-icon"><i data-lucide="lock-keyhole"></i></div>
+                        <div class="settings-heading">
+                            <h2>Change Password</h2>
+                            <p>Create a new password for your account.</p>
+                        </div>
+                    </div>
+
+                    <form id="password-form" method="post">
+                        <div class="settings-form-grid three-columns">
+                            <!-- Current Password -->
+                            <div class="form-group">
+                                <label for="current-password">Current Password</label>
+                                <div class="password-field">
+                                    <input type="password" id="current-password" name="current_password" placeholder="Current password" autocomplete="current-password" required>
+                                    <button type="button" class="password-toggle" data-target="current-password" aria-label="Show current password" aria-pressed="false">
+                                        <i data-lucide="eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- New Password -->
+                            <div class="form-group">
+                                <label for="new-password">New Password</label>
+                                <div class="password-field">
+                                    <input type="password" id="new-password" name="new_password" placeholder="New password" autocomplete="new-password" minlength="8" required>
+                                    <button type="button" class="password-toggle" data-target="new-password" aria-label="Show new password" aria-pressed="false">
+                                        <i data-lucide="eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Confirm New Password -->
+                            <div class="form-group">
+                                <label for="confirm-password">Confirm New Password</label>
+                                <div class="password-field">
+                                    <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm password" autocomplete="new-password" minlength="8" required>
+                                    <button type="button" class="password-toggle" data-target="confirm-password" aria-label="Show confirmed password" aria-pressed="false">
+                                        <i data-lucide="eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-form-footer">
+                            <p class="settings-note">
+                                <i data-lucide="info"></i>
+                                Use at least 8 characters for your new password.
+                            </p>
+
+                            <button type="button" class="btn btn-primary settings-button" id="update-password">Update Password</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- ==================== PRIVACY NOTE ==================== -->
+                <div class="settings-privacy">
+                    <i data-lucide="shield-check"></i>
+                    <p>Your privacy matters. Your personal contact information is never shared publicly on UniFynd.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        window.lucide?.createIcons();
+    </script>
+
+    <!-- Profile Settings JavaScript -->
+    <script type="module" src="js/profile_settings.js"></script>
+
+</body>
+
+</html>
