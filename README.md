@@ -362,3 +362,36 @@ The 404 page provides a user-friendly error screen when users attempt to access 
 No JavaScript is required for this page.
 
 Authentication-based navigation, real notification data, and HTTP 404 error handling will be implemented during backend integration.
+
+
+# Help & FAQ Page
+
+**Files:** `help_faq.html`, `help_faq.css`
+
+The Help & FAQ page provides answers to frequently asked questions and allows users to contact the UniFynd support team. It is accessible to both guests and registered users.
+
+**Features:**
+- Interactive FAQ accordion with seven questions.
+- Information about item reporting, AI matching, ownership verification, privacy, and listing statuses.
+- Help and support section with email contact functionality.
+- Custom FAQ and Help illustrations.
+- Responsive design for desktop, tablet, and mobile devices.
+- Navigation structure prepared for authentication and notifications.
+
+**Technical Details:**
+- Developed using HTML5 and CSS3.
+- Uses native HTML accordion functionality without JavaScript or TypeScript.
+- Reuses `base.css` and `navbar.css`.
+- Uses `faq.png` and `help.png` from the assets folder.
+
+**Pending Tasks:**
+- Update the official support email address.
+- Integrate authentication and notification functionality.
+- Verify protected page redirection and browser compatibility.
+
+**Status:** Frontend completed — backend integration and testing pending.
+
+
+
+
+

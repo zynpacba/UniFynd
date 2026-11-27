@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Find answers to frequently asked questions and get support from the UniFynd team.">
+  <title>UniFynd — Help & FAQ</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/help_faq.css">
+</head>
+
+<body>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+
+      <!-- Brand -->
+      <a href="/landing_page.html" class="brand" aria-label="UniFynd home">
+        <img src="/assets/magnifier.png" alt="" class="brand-icon">
+        <span>UniFynd<span class="brand-dot">.</span></span>
+      </a>
+
+      <!-- Mobile Menu -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" aria-controls="nav-content">
+      <label for="nav-toggle" class="menu-toggle" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Navigation Content -->
+      <div class="nav-content" id="nav-content">
+        <div class="nav-links">
+          <a href="/landing_page.html">Home</a>
+          <a href="/browse_items.html">Browse Items</a>
+          <a href="/about_us.html">About Us</a>
+          <a href="/help_faq.html" class="active" aria-current="page">FAQ</a>
+          <!-- Logged-in User Only -->
+          <a href="/profile.html" class="auth-only" hidden>My Profile</a>
+        </div>
+
+        <!-- Guest User Actions -->
+        <div class="nav-actions guest-only">
+          <a href="/login.html" class="login-link">Log In</a>
+          <a href="/register.html" class="btn btn-primary signup-link">
+            Sign Up
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <!-- Logged-in User Actions -->
+        <div class="nav-actions auth-only" hidden>
+          <button type="button" class="nav-notification" popovertarget="notification-popup" aria-label="Notifications">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 8a6 6 0 0 0-12 0 c0 7-3 7-3 9h18 c0-2-3-2-3-9"/>
+              <path d="M10 21h4"/>
+            </svg>
+            <span class="notification-dot" hidden></span>
+          </button>
+        </div>
+      </div>
+
+    </nav>
+
+    <!-- ==================== NOTIFICATION POPOVER ==================== -->
+    <section id="notification-popup" class="notification-popup" popover="auto" aria-labelledby="notification-title">
+      <div class="notification-header">
+        <div>
+          <h2 id="notification-title">Recent Activity</h2>
+          <p>Your latest updates and notifications.</p>
+        </div>
+        <button type="button" class="notification-close" popovertarget="notification-popup" popovertargetaction="hide" aria-label="Close notifications">&times;</button>
+      </div>
+
+      <!-- Notification data will come from the backend. -->
+      <div class="notification-empty">
+        <p>No notifications to display.</p>
+      </div>
+    </section>
+  </header>
+
+  <!-- ==================== MAIN PAGE ==================== -->
+  <main class="help-faq-page">
+
+    <!-- ==================== FAQ HERO ==================== -->
+    <section class="faq-hero container" aria-labelledby="faq-heading">
+      <!-- Left Side: Content -->
+      <div class="faq-hero-content">
+        <div class="section-eyebrow">
+          <span class="section-dot"></span>
+          Help &amp; FAQ
+        </div>
+        <h1 class="faq-title" id="faq-heading">
+          Frequently Asked
+          <span class="section-highlight">Questions</span>
+        </h1>
+        <p class="section-description">Find answers, get support, and make the most of UniFynd.</p>
+      </div>
+
+      <!-- Right Side: Illustration -->
+      <div class="faq-visual">
+        <img src="/assets/faq.png" alt="" class="faq-illustration">
+      </div>
+    </section>
+
+    <!-- ==================== FAQ ACCORDION ==================== -->
+    <section class="faq-section container" aria-label="Frequently asked questions">
+      <div class="faq-list">
+
+        <!-- Question 1 -->
+        <details class="faq-card" name="faq" open>
+          <summary class="faq-question">
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="7" r="4"/>
+                <path d="M4 21v-2a8 8 0 0 1 16 0v2z"/>
+              </svg>
+            </span>
+            <span class="faq-question-text">Do I need an account to browse items?</span>
+            <span class="faq-chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              No. You can browse lost and found items freely.
+              You only need an account to post items, manage your
+              listings, or communicate with other users.
+            </p>
+          </div>
+        </details>
+
+        <!-- Question 2 -->
+        <details class="faq-card" name="faq">
+          <summary class="faq-question">
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="4"/>
+                <path d="M12 8v8M8 12h8"/>
+              </svg>
+            </span>
+            <span class="faq-question-text">How do I report a lost or found item?</span>
+            <span class="faq-chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Log in to your UniFynd account and select Report Item.
+              Choose whether you lost or found an item, enter its
+              description, category, university, campus and location, and
+              submit your listing.
+            </p>
+            <a href="/report_item.html" class="faq-answer-link">Report an Item →</a>
+          </div>
+        </details>
+
+        <!-- Question 3 -->
+        <details class="faq-card" name="faq">
+          <summary class="faq-question">
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2c0 6-4 10-10 10 6 0 10 4 10 10 0-6 4-10 10-10-6 0-10-4-10-10z"/>
+                <path d="M20 2v4M18 4h4"/>
+              </svg>
+            </span>
+            <span class="faq-question-text">How does AI matching work?</span>
+            <span class="faq-chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              UniFynd uses AI-powered semantic matching to compare
+              lost and found item descriptions, even when different
+              words are used to describe similar belongings.
+            </p>
+            <p>
+              The system suggests possible matches based on item
+              information and campus details. A suggested match
+              does not guarantee that two listings refer to the
+              same item. Users must verify the match themselves.
+            </p>
+          </div>
+        </details>
+
+        <!-- Question 4 -->
+        <details class="faq-card" name="faq">
+          <summary class="faq-question">
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2 3 6v6c0 5 9 10 9 10s9-5 9-10V6z"/>
+                <path d="m8 12 3 3 5-6"/>
+              </svg>
+            </span>
+            <span class="faq-question-text">How do I prove an item belongs to me?</span>
+            <span class="faq-chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Open the relevant item listing and submit an
+              ownership claim. Provide identifying details that
+              can help the person who found the item verify
+              your ownership.
+            </p>
+            <p>
+              These details may include unique marks, accessories,
+              or other characteristics that are not publicly
+              displayed in the listing.
+            </p>
+          </div>
+        </details>
+
+        <!-- Question 5 -->
+        <details class="faq-card" name="faq">
+          <summary class="faq-question">
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="4" y="10" width="16" height="12" rx="3"/>
+                <path d="M8 10V6a4 4 0 0 1 8 0v4"/>
+              </svg>
+            </span>
+            <span class="faq-question-text">Is my contact information visible to other users?</span>
+            <span class="faq-chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Your personal contact information is not publicly
+              displayed on UniFynd listings.
+            </p>
+            <p>
+              Users must send a contact or ownership claim request.
+              Messaging becomes available only after the listing
+              owner approves the request.
+            </p>
+          </div>
+        </details>
+
+        <!-- Question 6 -->
+        <details class="faq-card" name="faq">
+          <summary class="faq-question">
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 7a9 9 0 0 0-15-2L2 8"/>
+                <path d="M2 3v5h5"/>
+                <path d="M4 17a9 9 0 0 0 15 2l3-3"/>
+                <path d="M22 21v-5h-5"/>
+              </svg>
+            </span>
+            <span class="faq-question-text">What do the listing statuses mean?</span>
+            <span class="faq-chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Listing statuses help you understand the current
+              progress of a lost or found item.
+            </p>
+            <div class="faq-status-row">
+              <span class="faq-status status-active">Active</span>
+              <span>The item has not yet been returned.</span>
+            </div>
+            <div class="faq-status-row">
+              <span class="faq-status status-returned">Returned</span>
+              <span>The item has been reunited with its owner.</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- Question 7 -->
+        <details class="faq-card" name="faq">
+          <summary class="faq-question">
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v6M12 17h.01"/>
+              </svg>
+            </span>
+            <span class="faq-question-text">What should I do if I find an item on campus?</span>
+            <span class="faq-chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Create a found item listing on UniFynd and include
+              where and when you found the item.
+            </p>
+            <p>
+              Keep unique identifying details private to help
+              verify ownership. When appropriate, hand the item
+              over to campus security or the university's
+              lost-and-found office.
+            </p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- ==================== HELP & SUPPORT ==================== -->
+    <section class="help-section container" aria-labelledby="help-heading">
+
+      <!-- Left Side: Content -->
+      <div class="help-content">
+        <div class="section-eyebrow">
+          <span class="section-dot"></span>
+          Still need help?
+        </div>
+        <h2 class="help-title" id="help-heading">
+          We're here to
+          <span class="section-highlight">help!</span>
+        </h2>
+        <p class="section-description">
+          Have a question, found a problem, or want to share
+          feedback? Get in touch with the UniFynd team.
+        </p>
+
+        <!-- Contact Actions -->
+        <div class="help-contact">
+          <!-- Replace the placeholder with the official support email. -->
+          <a href="mailto:support@example.com?subject=UniFynd%20Support" class="btn help-contact-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="3"/>
+              <path d="m2 6 10 7L22 6"/>
+            </svg>
+            Contact Us
+            <span aria-hidden="true">→</span>
+          </a>
+
+          <span class="contact-divider" aria-hidden="true"></span>
+
+          <div class="help-email">
+            <span class="help-email-label">Email</span>
+            <a href="mailto:support@example.com">support@example.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side: Illustration -->
+      <div class="help-visual">
+        <img src="/assets/help.png" alt="" class="help-illustration" loading="lazy">
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>
