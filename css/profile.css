@@ -208,21 +208,6 @@
     box-shadow: 0 4px 10px rgba(23, 107, 115, .12);
 }
 
-.sidebar-count {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 21px;
-    height: 21px;
-    margin-left: auto;
-    padding: 0 5px;
-    border-radius: 50px;
-    background: var(--color-accent);
-    color: var(--color-text);
-    font-size: 11px;
-    font-weight: 800;
-}
-
 .logout-link {
     color: #b94b4b;
 }
@@ -415,13 +400,13 @@ a.stat-card:hover {
 }
 
 .stat-active {
-    background: var(--color-found-bg);
-    color: var(--color-found-text);
+    background: #e9eef9;
+    color: #526fa6;
 }
 
 .stat-returned {
-    background: #e9eef9;
-    color: #526fa6;
+    background: #ddf2e6;
+    color: #198754;
 }
 
 .stat-matches {
@@ -674,14 +659,19 @@ a.stat-card:hover {
     cursor: pointer;
 }
 
-.status-active {
-    background: var(--color-found-bg);
-    color: var(--color-found-text);
-}
+/* Active Status - Blue */
 
-.status-returned {
+.status-select:has(option[value="active"]:checked) {
     background: #e9eef9;
     color: #526fa6;
+}
+
+
+/* Returned Status - Green */
+
+.status-select:has(option[value="returned"]:checked) {
+    background: #ddf2e6;
+    color: #198754;
 }
 
 
@@ -1304,4 +1294,412 @@ a.stat-card:hover {
         height: 16px;
     }
 
+}
+
+/* ========================================
+   NOTIFICATION POPOVER
+======================================== */
+
+.nav-notification {
+    cursor: pointer;
+    anchor-name: --notification-button;
+}
+
+.notification-popup {
+    position: fixed;
+    inset: auto;
+    top: 100px;
+    right: 32px;
+
+    width: 390px;
+    max-width: calc(100vw - 32px);
+    max-height: 70vh;
+
+    margin: 0;
+    padding: 22px;
+
+    overflow-y: auto;
+
+    background: var(--color-surface);
+    color: var(--color-text);
+
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+
+    box-shadow: 0 12px 40px rgba(37, 55, 70, .18);
+}
+
+
+/* Position directly below the notification button */
+
+@supports (top: anchor(bottom)) {
+
+    .notification-popup {
+        position-anchor: --notification-button;
+        top: calc(anchor(bottom) + 14px);
+        right: anchor(right);
+        position-try-fallbacks: flip-inline, flip-block;
+    }
+
+}
+
+
+/* Popup Opening Animation */
+
+.notification-popup:popover-open {
+    animation: notification-open .2s ease-out;
+}
+
+@keyframes notification-open {
+
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Popup Header */
+
+.notification-popup .section-header {
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+
+/* Close Button */
+
+.notification-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+
+    border: 0;
+    border-radius: 8px;
+
+    background: transparent;
+    color: var(--color-text-muted);
+
+    cursor: pointer;
+    transition: background .2s, color .2s;
+}
+
+.notification-close svg {
+    width: 18px;
+    height: 18px;
+}
+
+.notification-close:hover {
+    background: #edf5f3;
+    color: var(--color-primary);
+}
+
+
+/* Responsive Notification Popup */
+
+@media (max-width: 700px) {
+
+    .notification-popup {
+        top: 150px;
+        right: 16px;
+        left: auto;
+
+        width: 390px;
+        max-width: calc(100vw - 32px);
+        padding: 18px;
+    }
+
+}
+
+
+/* ========================================
+   DELETE CONFIRMATION MODAL
+======================================== */
+
+.delete-modal {
+    position: fixed;
+    inset: 0;
+
+    width: 420px;
+    max-width: calc(100% - 32px);
+
+    margin: auto;
+    padding: 28px;
+    box-sizing: border-box;
+
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+
+    background: var(--color-surface);
+    color: var(--color-text);
+
+    box-shadow: 0 15px 50px rgba(37, 55, 70, .2);
+}
+
+
+/* Background Overlay */
+
+.delete-modal::backdrop {
+    background: rgba(37, 55, 70, .40);
+    backdrop-filter: blur(3px);
+}
+
+
+/* Modal Header */
+
+.delete-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+
+/* Delete Icon */
+
+.delete-modal-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 54px;
+    height: 54px;
+
+    border-radius: 50%;
+
+    background: #fdecec;
+    color: #b94b4b;
+}
+
+.delete-modal-icon svg {
+    width: 26px;
+    height: 26px;
+}
+
+
+/* Close Button */
+
+.delete-modal-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    border: 0;
+    border-radius: 8px;
+
+    background: transparent;
+    color: var(--color-text-muted);
+
+    cursor: pointer;
+}
+
+.delete-modal-close:hover {
+    background: #f1f1f1;
+}
+
+.delete-modal-close svg {
+    width: 19px;
+    height: 19px;
+}
+
+
+/* Modal Content */
+
+.delete-modal h2 {
+    margin: 0 0 12px;
+
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -.5px;
+}
+
+.delete-modal p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    color: var(--color-text-muted);
+}
+
+.delete-modal p strong {
+    color: var(--color-text);
+    font-weight: 700;
+}
+
+
+/* Modal Actions */
+
+.delete-modal-actions {
+    display: flex;
+    gap: 12px;
+
+    margin-top: 24px;
+    padding-top: 20px;
+
+    border-top: 1px solid var(--color-border);
+}
+
+
+/* General Button Style */
+
+.delete-cancel-button,
+.delete-confirm-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    flex: 1;
+    min-height: 44px;
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: background .2s, color .2s;
+}
+
+
+/* Cancel Button */
+
+.delete-cancel-button {
+    border: 1px solid var(--color-border);
+    background: white;
+    color: var(--color-text);
+}
+
+.delete-cancel-button:hover {
+    background: #edf5f3;
+}
+
+
+/* Confirm Delete Button */
+
+.delete-confirm-button {
+    border: 1px solid #b94b4b;
+    background: #b94b4b;
+    color: white;
+}
+
+.delete-confirm-button:hover {
+    background: #a13b3b;
+}
+
+.delete-confirm-button svg {
+    width: 16px;
+    height: 16px;
+}
+
+
+/* Opening Animation */
+
+.delete-modal[open] {
+    animation: delete-modal-open .2s ease-out;
+}
+
+@keyframes delete-modal-open {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* ========================================
+   LISTING FILTER FUNCTIONALITY
+======================================== */
+
+.profile-listing[hidden],
+.listing-empty-state[hidden] {
+    display: none;
+}
+
+.listing-tab {
+    cursor: pointer;
+}
+
+
+/* Empty State */
+
+.listing-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.listing-empty-state svg {
+    width: 38px;
+    height: 38px;
+    color: var(--color-primary);
+}
+
+.listing-empty-state h3 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.listing-empty-state p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--color-text-muted);
+}
+
+
+/* Reset Filters Button */
+
+.reset-filters-button {
+    margin-top: 8px;
+    padding: 9px 18px;
+
+    border: 1px solid var(--color-primary);
+    border-radius: 8px;
+
+    background: transparent;
+    color: var(--color-primary);
+
+    font: inherit;
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: background .2s, color .2s;
+}
+
+.reset-filters-button:hover {
+    background: var(--color-primary);
+    color: white;
 }
