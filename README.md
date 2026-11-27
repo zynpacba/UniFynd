@@ -335,3 +335,30 @@ The Profile Settings page allows authenticated users to manage their personal in
 Frontend implementation is prepared. Account information and notifications currently use sample data. Form validation is implemented, but account and password changes require backend integration.
 
 TypeScript compilation and browser testing are pending.
+
+# 404 — Page Not Found
+
+The 404 page provides a user-friendly error screen when users attempt to access a non-existent page. Its design reflects UniFynd's campus-focused lost-and-found concept.
+
+### Features
+
+- Custom 404 error message and campus-themed illustration.
+- Navigation options based on the user's authentication status.
+- Responsive design for desktop, tablet, and mobile devices.
+- CSS-only mobile navigation.
+- Notification popover for authenticated users.
+- Consistent colors, typography, and branding.
+
+### Related Files
+
+- `404.html` — Page structure.
+- `css/404.css` — Page-specific styling.
+- `css/base.css` — Shared styles and design variables.
+- `css/navbar.css` — Shared navigation styles.
+- `assets/404.png` — Custom error page illustration.
+
+### Technical Notes
+
+No JavaScript is required for this page.
+
+Authentication-based navigation, real notification data, and HTTP 404 error handling will be implemented during backend integration.
