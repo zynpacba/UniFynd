@@ -224,3 +224,64 @@ The Browse Items page allows both guests and registered users to browse and sear
 
 The frontend prototype uses temporary sample data and client-side filtering. API integration and authentication are pending. API endpoints and the final data structure will be agreed upon with the backend developer.
 
+
+
+# UniFynd - Profile 
+
+## 1. Overview
+
+The Profile Page is a personal dashboard where users can manage their lost and found listings, review AI matches, and check recent activities.
+
+## 2. Related Files
+
+- `profile.html` – Page structure and content.
+- `profile.css` – Page-specific styling and responsive design.
+- `profile.ts` – Client-side functionality.
+- `profile.js` – Compiled TypeScript file.
+- `base.css` and `navbar.css` – Shared styles.
+
+## 3. Implemented Features
+
+- **Navbar:** Navigation links, Create New Item button, and notification popup.
+- **Sidebar:** User information and account navigation.
+- **Statistics:** Total, Active, and Returned listing counts update automatically when listing statuses change.
+- **Listing Filters:** Combined filtering by item type (All Items, Lost, Found) and status (All Statuses, Active, Returned).
+- **Empty State:** Displays a message and Clear Filters button when no listings match.
+- **Status Management:** Active (blue) and Returned (green) with dynamic color changes.
+- **Delete Confirmation:** Opens a confirmation modal and captures the selected item ID.
+- **AI Matches:** Displays sample matches and similarity scores.
+- **Recent Activity:** Displays sample notifications.
+- **Responsive Design:** Supports desktop, tablet, and mobile layouts.
+
+## 4. Navigation Parameters
+
+| Action | Destination |
+|---|---|
+| Create New Item | `report_item.html` |
+| View | `item_detail.html?id=1` |
+| Edit | `report_item.html?mode=edit&id=1` |
+| Review AI Match | `item_detail.html?id=5` |
+
+The IDs are sample values and must be assigned dynamically during backend integration.
+
+## 5. Backend Requirements (Rami)
+
+- Retrieve authenticated user information and personal listings.
+- Implement authentication, authorization, and Log Out.
+- Retrieve item images and listing details.
+- Pre-fill the Report Item form when `mode=edit` is provided.
+- Save listing updates and status changes to the database.
+- Implement deletion using `data-item-id`. Remove the listing and refresh statistics and AI matches after successful deletion.
+- Connect the AI semantic matching system and display actual similarity scores.
+- Retrieve notifications and synchronize both Recent Activity sections.
+- Protect private ownership verification details and prevent unauthorized listing modifications.
+
+## 6. Development Status
+
+- Frontend structure and styling: Completed.
+- Client-side functionality: Implemented.
+- Sample images and final browser testing: Pending.
+- Backend and database integration: Pending.
+- AI matching integration: Pending.
+
+Compile `profile.ts` into `js/profile.js` before running the page.
