@@ -1,0 +1,169 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse lost and found items across university campuses with UniFynd.">
+  <title>UniFynd — Browse Items</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/browse.css">
+</head>
+
+<body>
+  <!-- ================= NAVBAR ================= -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="landing_page.html" aria-label="UniFynd home">
+        <img src="assets/magnifier.png" alt="" class="brand-icon">
+        <span>UniFynd<span class="brand-dot">.</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="nav-content" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="nav-content" id="nav-content">
+        <div class="nav-links">
+          <a href="landing_page.html">Home</a>
+          <a class="active" href="browse_items.html" aria-current="page">Browse Items</a>
+          <a href="how-it-works.html">How It Works</a>
+        </div>
+        <div class="nav-actions">
+          <a class="login-link" href="login.html">Log In</a>
+          <a class="btn btn-primary signup-link" href="register.html">Sign Up <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- ================= MAIN CONTENT ================= -->
+  <main>
+    <!-- PAGE HEADER -->
+    <section class="browse-header container">
+      <div class="browse-header-content">
+        <span class="browse-eyebrow">CAMPUS LOST &amp; FOUND</span>
+        <h1>Browse Lost &amp; Found Items</h1>
+        <p>
+          Explore items reported across your campus.
+          Find what you're looking for and help others
+          reconnect with their belongings.
+        </p>
+      </div>
+      <a href="report_item.html" class="btn btn-amber browse-report-btn">+ Report an Item</a>
+    </section>
+
+    <!-- SEARCH & FILTERS -->
+    <section class="browse-controls container"
+             aria-label="Search and filter listings">
+
+      <!-- MAIN SEARCH -->
+      <form class="browse-search" id="browse-search-form" role="search">
+        <svg viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2"
+             aria-hidden="true">
+          <circle cx="10.8" cy="10.8" r="6.5"/>
+          <path d="m16 16 5 5"/>
+        </svg>
+        <input type="search" id="browse-search-input" placeholder="Search by item name or description..." aria-label="Search listings">
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+
+      <!-- CATEGORY BUTTONS -->
+      <div class="browse-categories" role="group" aria-label="Filter by category">
+        <button type="button" class="category-btn active" data-category="all" aria-pressed="true">All Items</button>
+        <button type="button" class="category-btn" data-category="electronics" aria-pressed="false">Electronics</button>
+        <button type="button" class="category-btn" data-category="documents" aria-pressed="false">Documents</button>
+        <button type="button" class="category-btn" data-category="accessories" aria-pressed="false">Accessories</button>
+        <button type="button" class="category-btn" data-category="clothing" aria-pressed="false">Clothing</button>
+        <button type="button" class="category-btn" data-category="other" aria-pressed="false">Other</button>
+      </div>
+
+      <!-- DROPDOWN FILTERS -->
+      <div class="browse-filters">
+        <div class="filter-group">
+          <label for="filter-type">Listing Type</label>
+          <select id="filter-type">
+            <option value="all">All Types</option>
+            <option value="lost">Lost</option>
+            <option value="found">Found</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-campus">Campus</label>
+          <select id="filter-campus">
+            <option value="all">All Campuses</option>
+            <option value="kavacik-kuzey">Kavacık Kuzey Campus</option>
+            <option value="kavacik-guney">Kavacık Güney Campus</option>
+            <option value="halic">Haliç Campus</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-location">Building / Location</label>
+          <select id="filter-location">
+            <option value="all">All Locations</option>
+            <option value="library">Library</option>
+            <option value="classroom">Classrooms</option>
+            <option value="lecture-hall">Lecture Halls</option>
+            <option value="cafeteria">Student Cafeteria</option>
+            <option value="dining-area">Dining Areas</option>
+            <option value="laboratory">Laboratories</option>
+            <option value="copy-center">Copy Center</option>
+            <option value="conference-hall">Conference Hall</option>
+            <option value="store">Medipol Store</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-date">Date</label>
+          <select id="filter-date">
+            <option value="all">Any Time</option>
+            <option value="7">Last 7 Days</option>
+            <option value="30">Last 30 Days</option>
+            <option value="90">Last 90 Days</option>
+          </select>
+        </div>
+        <button type="button" class="clear-filters" id="clear-filters">Clear Filters</button>
+      </div>
+    </section>
+
+    <!-- LISTINGS -->
+    <section class="browse-results container" aria-labelledby="results-heading">
+      <div class="results-toolbar">
+        <div>
+          <h2 id="results-heading">Recent Listings</h2>
+          <p id="results-count" aria-live="polite">Showing items</p>
+        </div>
+        <div class="sort-group">
+          <label for="sort-items">Sort by:</label>
+          <select id="sort-items">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="az">Name A–Z</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- ITEM CARDS RENDERED BY JAVASCRIPT -->
+
+      <div class="items-grid" id="items-grid"></div>
+
+
+      <!-- EMPTY STATE -->
+      <div class="empty-state" id="empty-state" hidden>
+        <div class="empty-icon" aria-hidden="true">⌕</div>
+        <h3>No items found</h3>
+        <p>Try changing your search or filters to see more listings.</p>
+        <button type="button" class="btn btn-primary" id="empty-clear-btn">Clear Filters</button>
+      </div>
+      <!-- PAGINATION -->
+      <nav class="pagination" id="pagination" aria-label="Listing pages"></nav>
+    </section>
+  </main>
+  <script src="js/browse.js" defer></script>
+</body>
+</html>

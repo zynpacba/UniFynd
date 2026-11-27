@@ -1,0 +1,1110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Manage your campus lost and found listings, AI matches and personal activity on UniFynd.">
+    <title>UniFynd — My Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+</head>
+
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+
+    <header class="site-header">
+
+        <nav class="nav container">
+
+            <a href="landing_page.html" class="brand">
+                <img src="images/logo.png"
+                     alt=""
+                     class="brand-icon">
+
+                <span>UniFynd<span class="brand-dot">.</span></span>
+            </a>
+
+            <div class="nav-content">
+
+                <div class="nav-links">
+
+                    <a href="landing_page.html">Home</a>
+
+                    <a href="browse_items.html">Browse Items</a>
+
+                    <a href="#ai-matches">AI Matches</a>
+
+                    <a href="profile.html" class="active"
+                       aria-current="page">
+                        My Profile
+                    </a>
+
+                </div>
+
+                <div class="nav-actions">
+
+                    <a href="#notifications"
+                       class="nav-notification"
+                       aria-label="Notifications">
+
+                        <i data-lucide="bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </a>
+
+                    <a href="report_item.html"
+                       class="btn btn-amber">
+
+                        <i data-lucide="plus"></i>
+                        Create New Item
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ==================== PROFILE LAYOUT ==================== -->
+
+    <main class="profile-layout container">
+
+
+        <!-- ==================== SIDEBAR ==================== -->
+
+        <aside class="profile-sidebar">
+
+            <!-- User Information -->
+
+            <div class="user-information">
+
+                <div class="profile-avatar">
+
+                    <img src="images/profile-avatar.jpg"
+                         alt="Profile photo">
+
+                </div>
+
+                <h2>Elif Demir</h2>
+
+                <span class="user-role">Student</span>
+
+                <div class="campus-information">
+
+                    <div class="campus-info-row">
+
+                        <i data-lucide="graduation-cap"></i>
+
+                        <span>Istanbul Medipol University</span>
+
+                    </div>
+
+                    <div class="campus-info-row">
+
+                        <i data-lucide="map-pin"></i>
+
+                        <span>Kavacik Campus</span>
+
+                    </div>
+
+                    
+
+                </div>
+
+            </div>
+
+
+            <!-- Sidebar Navigation -->
+
+            <nav class="sidebar-navigation"
+                 aria-label="Profile navigation">
+
+                <span class="sidebar-label">WORKSPACE</span>
+
+                <a href="profile.html"
+                   class="sidebar-link active"
+                   aria-current="page">
+
+                    <i data-lucide="layout-dashboard"></i>
+
+                    <span>Overview</span>
+
+                </a>
+
+                <a href="#my-listings" class="sidebar-link">
+
+                    <i data-lucide="clipboard-list"></i>
+
+                    <span>My Listings</span>
+
+                </a>
+
+                <a href="#ai-matches" class="sidebar-link">
+
+                    <i data-lucide="sparkles"></i>
+
+                    <span>AI Matches</span>
+
+                </a>
+
+
+                <a href="#notifications" class="sidebar-link">
+
+                    <i data-lucide="bell"></i>
+
+                    <span>Recent Activity</span>
+
+                    <span class="sidebar-count">2</span>
+
+                </a>
+                
+                <a href="messages_claims.html" class="sidebar-link">
+
+                    <i data-lucide="message-square"></i>
+
+                    <span>Messages &amp; Claims</span>
+
+                    <span class="sidebar-count">3</span>
+
+                </a>
+
+                <span class="sidebar-label account-label">
+                    ACCOUNT
+                </span>
+
+                <a href="profile_settings.html" class="sidebar-link">
+
+                    <i data-lucide="settings"></i>
+
+                    <span>Profile Settings</span>
+
+                </a>
+
+                <a href="faq.html" class="sidebar-link">
+
+                    <i data-lucide="circle-help"></i>
+
+                    <span>Help &amp; FAQ</span>
+
+                </a>
+
+                <button type="button"
+                        class="sidebar-link logout-link"
+                        disabled>
+
+                    <i data-lucide="log-out"></i>
+
+                    <span>Log Out</span>
+
+                </button>
+
+            </nav>
+
+
+            <!-- Campus Illustration -->
+
+            <div class="sidebar-campus">
+
+                <img src="images/campus-illustration.png"
+                     alt="">
+
+                <p>Find it. Match it. Take it back.</p>
+
+                <span>Your campus, your community.</span>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ==================== MAIN CONTENT ==================== -->
+
+        <div class="profile-content">
+
+
+            <!-- Welcome Section -->
+
+            <section class="welcome-banner">
+
+                <div class="welcome-content">
+
+                    <span class="welcome-label">
+
+                        <i data-lucide="graduation-cap"></i>
+
+                        YOUR CAMPUS SPACE
+
+                    </span>
+
+                    <h1>Welcome back, Elif! 👋</h1>
+
+                    <p>
+                        Manage your lost and found listings,
+                        discover possible matches and stay connected
+                        with your campus community.
+                    </p>
+
+                    <div class="welcome-campus">
+
+                        <i data-lucide="map-pin"></i>
+
+                        Istanbul Medipol University
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================== STATISTICS ==================== -->
+
+            <section class="profile-statistics"
+                     aria-label="Profile statistics">
+
+                <!-- Total Listings -->
+
+                <a href="#my-listings" class="stat-card">
+
+                    <div class="stat-icon stat-listings">
+
+                        <i data-lucide="clipboard-list"></i>
+
+                    </div>
+
+                    <div class="stat-information">
+
+                        <strong>4</strong>
+
+                        <span>My Listings</span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- Active Listings -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon stat-active">
+
+                        <i data-lucide="circle-check"></i>
+
+                    </div>
+
+                    <div class="stat-information">
+
+                        <strong>2</strong>
+
+                        <span>Active</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Returned Listings -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon stat-returned">
+
+                        <i data-lucide="package-check"></i>
+
+                    </div>
+
+                    <div class="stat-information">
+
+                        <strong>2</strong>
+
+                        <span>Returned</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- AI Matches -->
+
+                <a href="#ai-matches" class="stat-card">
+
+                    <div class="stat-icon stat-matches">
+
+                        <i data-lucide="sparkles"></i>
+
+                    </div>
+
+                    <div class="stat-information">
+
+                        <strong>3</strong>
+
+                        <span>AI Matches</span>
+
+                    </div>
+
+                </a>
+
+            </section>
+
+
+            <!-- ==================== MY LISTINGS ==================== -->
+
+            <section class="profile-card listings-section"
+                     id="my-listings">
+
+                <div class="section-header">
+
+                    <div class="section-heading">
+
+                        <h2>My Listings</h2>
+
+                        <p>Manage your campus lost and found reports.</p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Listing Filters -->
+
+                <div class="listing-toolbar">
+
+                    <div class="listing-tabs">
+
+                        <button type="button"
+                                class="listing-tab active">
+                            All Items
+                        </button>
+
+                        <button type="button" class="listing-tab">
+                            Lost
+                        </button>
+
+                        <button type="button" class="listing-tab">
+                            Found
+                        </button>
+
+                    </div>
+
+                    <select class="status-filter"
+                            aria-label="Filter listings by status">
+
+                        <option value="all">All Statuses</option>
+
+                        <option value="active">Active</option>
+
+                        <option value="returned">Returned</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Listing 1 -->
+
+                <div class="listing-list">
+
+                    <article class="profile-listing">
+
+                        <img src="images/black-backpack.jpg"
+                             alt="Black backpack"
+                             class="listing-image">
+
+                        <div class="listing-information">
+
+                            <h3>Black Backpack</h3>
+
+                            <div class="listing-meta">
+
+                                <span class="item-type lost">Lost</span>
+
+                                <span class="listing-location">
+
+                                    <i data-lucide="map-pin"></i>
+
+                                    Kavacik Campus · Library
+
+                                </span>
+
+                            </div>
+
+                            <span class="listing-date">
+
+                                <i data-lucide="calendar-days"></i>
+
+                                Nov 24, 2026
+
+                            </span>
+
+                        </div>
+
+                        <div class="listing-status">
+
+                            <select class="status-select status-active"
+                                    aria-label="Status of Black Backpack">
+
+                                <option value="active" selected>
+                                    Active
+                                </option>
+
+                                <option value="returned">
+                                    Returned
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="listing-actions">
+
+                            <a href="item_detail.html?id=1"
+                               class="action-button">
+
+                                <i data-lucide="eye"></i>
+
+                                View
+
+                            </a>
+
+                            <button type="button"
+                                    class="action-button">
+
+                                <i data-lucide="pencil"></i>
+
+                                Edit
+
+                            </button>
+
+                            <button type="button"
+                                    class="action-button delete-button">
+
+                                <i data-lucide="trash-2"></i>
+
+                                Delete
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Listing 2 -->
+
+                    <article class="profile-listing">
+
+                        <img src="images/wireless-earbuds.jpg"
+                             alt="Wireless earbuds"
+                             class="listing-image">
+
+                        <div class="listing-information">
+
+                            <h3>Wireless Earbuds</h3>
+
+                            <div class="listing-meta">
+
+                                <span class="item-type found">Found</span>
+
+                                <span class="listing-location">
+
+                                    <i data-lucide="map-pin"></i>
+
+                                    Kavacik Campus · B Block
+
+                                </span>
+
+                            </div>
+
+                            <span class="listing-date">
+
+                                <i data-lucide="calendar-days"></i>
+
+                                Nov 22, 2026
+
+                            </span>
+
+                        </div>
+
+                        <div class="listing-status">
+
+                            <select class="status-select status-returned"
+                                    aria-label="Status of Wireless Earbuds">
+
+                                <option value="active">
+                                    Active
+                                </option>
+
+                                <option value="returned" selected>
+                                    Returned
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="listing-actions">
+
+                            <a href="item_detail.html?id=2"
+                               class="action-button">
+
+                                <i data-lucide="eye"></i>
+
+                                View
+
+                            </a>
+
+                            <button type="button"
+                                    class="action-button">
+
+                                <i data-lucide="pencil"></i>
+
+                                Edit
+
+                            </button>
+
+                            <button type="button"
+                                    class="action-button delete-button">
+
+                                <i data-lucide="trash-2"></i>
+
+                                Delete
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Listing 3 -->
+
+                    <article class="profile-listing">
+
+                        <img src="images/water-bottle.jpg"
+                             alt="Blue water bottle"
+                             class="listing-image">
+
+                        <div class="listing-information">
+
+                            <h3>Blue Water Bottle</h3>
+
+                            <div class="listing-meta">
+
+                                <span class="item-type lost">Lost</span>
+
+                                <span class="listing-location">
+
+                                    <i data-lucide="map-pin"></i>
+
+                                    Kavacik Campus · Cafeteria
+
+                                </span>
+
+                            </div>
+
+                            <span class="listing-date">
+
+                                <i data-lucide="calendar-days"></i>
+
+                                Nov 20, 2026
+
+                            </span>
+
+                        </div>
+
+                        <div class="listing-status">
+
+                            <select class="status-select status-active"
+                                    aria-label="Status of Blue Water Bottle">
+
+                                <option value="active" selected>
+                                    Active
+                                </option>
+
+                                <option value="returned">
+                                    Returned
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="listing-actions">
+
+                            <a href="item_detail.html?id=3"
+                               class="action-button">
+
+                                <i data-lucide="eye"></i>
+
+                                View
+
+                            </a>
+
+                            <button type="button"
+                                    class="action-button">
+
+                                <i data-lucide="pencil"></i>
+
+                                Edit
+
+                            </button>
+
+                            <button type="button"
+                                    class="action-button delete-button">
+
+                                <i data-lucide="trash-2"></i>
+
+                                Delete
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Listing 4 -->
+
+                    <article class="profile-listing">
+
+                        <img src="images/brown-wallet.jpg"
+                             alt="Brown wallet"
+                             class="listing-image">
+
+                        <div class="listing-information">
+
+                            <h3>Brown Wallet</h3>
+
+                            <div class="listing-meta">
+
+                                <span class="item-type found">Found</span>
+
+                                <span class="listing-location">
+
+                                    <i data-lucide="map-pin"></i>
+
+                                    Kavacik Campus · Student Center
+
+                                </span>
+
+                            </div>
+
+                            <span class="listing-date">
+
+                                <i data-lucide="calendar-days"></i>
+
+                                Nov 18, 2026
+
+                            </span>
+
+                        </div>
+
+                        <div class="listing-status">
+
+                            <select class="status-select status-returned"
+                                    aria-label="Status of Brown Wallet">
+
+                                <option value="active">
+                                    Active
+                                </option>
+
+                                <option value="returned" selected>
+                                    Returned
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="listing-actions">
+
+                            <a href="item_detail.html?id=4"
+                               class="action-button">
+
+                                <i data-lucide="eye"></i>
+
+                                View
+
+                            </a>
+
+                            <button type="button"
+                                    class="action-button">
+
+                                <i data-lucide="pencil"></i>
+
+                                Edit
+
+                            </button>
+
+                            <button type="button"
+                                    class="action-button delete-button">
+
+                                <i data-lucide="trash-2"></i>
+
+                                Delete
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================== LOWER DASHBOARD ==================== -->
+
+            <div class="dashboard-bottom">
+
+
+                <!-- AI Matches -->
+
+                <section class="profile-card matches-section"
+                         id="ai-matches">
+
+                    <div class="section-header">
+
+                        <div class="section-heading">
+
+                            <h2 class="icon-heading">
+
+                                <i data-lucide="sparkles"></i>
+
+                                AI Matches
+
+                            </h2>
+
+                            <p>Possible matches for your active listings.</p>
+
+                        </div>
+
+                        <span class="match-count">3 matches</span>
+
+                    </div>
+
+
+                    <!-- Match 1 -->
+
+                    <article class="match-item">
+
+                        <img src="images/found-backpack.jpg"
+                             alt="Found black backpack"
+                             class="match-image">
+
+                        <div class="match-information">
+
+                            <span class="match-label">
+                                Possible match for your Black Backpack
+                            </span>
+
+                            <h3>Black Laptop Bag</h3>
+
+                            <span class="match-location">
+
+                                <i data-lucide="map-pin"></i>
+
+                                Kavacik Campus · Library
+
+                            </span>
+
+                            <span class="similarity-score">
+
+                                <i data-lucide="sparkles"></i>
+
+                                87% similarity
+
+                            </span>
+
+                        </div>
+
+                        <a href="item_detail.html?id=5"
+                           class="review-button">
+
+                            Review
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- Match 2 -->
+
+                    <article class="match-item">
+
+                        <img src="images/found-bottle.jpg"
+                             alt="Found blue bottle"
+                             class="match-image">
+
+                        <div class="match-information">
+
+                            <span class="match-label">
+                                Possible match for your Blue Water Bottle
+                            </span>
+
+                            <h3>Blue Stainless Steel Bottle</h3>
+
+                            <span class="match-location">
+
+                                <i data-lucide="map-pin"></i>
+
+                                Kavacik Campus · Cafeteria
+
+                            </span>
+
+                            <span class="similarity-score">
+
+                                <i data-lucide="sparkles"></i>
+
+                                82% similarity
+
+                            </span>
+
+                        </div>
+
+                        <a href="item_detail.html?id=6"
+                           class="review-button">
+
+                            Review
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- Match 3 -->
+
+                    <article class="match-item">
+
+                        <img src="images/found-bag.jpg"
+                             alt="Found dark backpack"
+                             class="match-image">
+
+                        <div class="match-information">
+
+                            <span class="match-label">
+                                Possible match for your Black Backpack
+                            </span>
+
+                            <h3>Dark Student Backpack</h3>
+
+                            <span class="match-location">
+
+                                <i data-lucide="map-pin"></i>
+
+                                Kavacik Campus · B Block
+
+                            </span>
+
+                            <span class="similarity-score">
+
+                                <i data-lucide="sparkles"></i>
+
+                                76% similarity
+
+                            </span>
+
+                        </div>
+
+                        <a href="item_detail.html?id=7"
+                           class="review-button">
+
+                            Review
+
+                        </a>
+
+                    </article>
+
+
+                    <div class="match-disclaimer">
+
+                        <i data-lucide="info"></i>
+
+                        <p>
+                            AI similarity scores indicate possible matches,
+                            not confirmed item ownership.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Recent Activity -->
+
+                <section class="profile-card activity-section"
+                         id="notifications">
+
+                    <div class="section-header">
+
+                        <div class="section-heading">
+
+                            <h2 class="icon-heading">
+
+                                <i data-lucide="clock-3"></i>
+
+                                Recent Activity
+
+                            </h2>
+
+                            <p>Your latest updates and notifications.</p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-list">
+
+                        <article class="activity-item">
+
+                            <div class="activity-icon activity-match">
+
+                                <i data-lucide="sparkles"></i>
+
+                            </div>
+
+                            <div class="activity-information">
+
+                                <h3>New AI match found</h3>
+
+                                <p>
+                                    A possible match was found for your
+                                    Black Backpack.
+                                </p>
+
+                                <time>2 hours ago</time>
+
+                            </div>
+
+                            <span class="unread-dot"
+                                  aria-label="Unread"></span>
+
+                        </article>
+
+
+                        <article class="activity-item">
+
+                            <div class="activity-icon activity-message">
+
+                                <i data-lucide="message-square"></i>
+
+                            </div>
+
+                            <div class="activity-information">
+
+                                <h3>New message received</h3>
+
+                                <p>
+                                    You received a message about
+                                    your Black Backpack.
+                                </p>
+
+                                <time>5 hours ago</time>
+
+                            </div>
+
+                            <span class="unread-dot"
+                                  aria-label="Unread"></span>
+
+                        </article>
+
+
+                        <article class="activity-item">
+
+                            <div class="activity-icon activity-returned">
+
+                                <i data-lucide="package-check"></i>
+
+                            </div>
+
+                            <div class="activity-information">
+
+                                <h3>Item successfully returned</h3>
+
+                                <p>
+                                    Wireless Earbuds was marked as returned.
+                                </p>
+
+                                <time>Yesterday</time>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="activity-item">
+
+                            <div class="activity-icon activity-listing">
+
+                                <i data-lucide="clipboard-plus"></i>
+
+                            </div>
+
+                            <div class="activity-information">
+
+                                <h3>New listing created</h3>
+
+                                <p>
+                                    You reported a lost Black Backpack
+                                    at the campus library.
+                                </p>
+
+                                <time>Nov 24, 2026</time>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- Privacy Note -->
+
+            <div class="profile-privacy-note">
+
+                <i data-lucide="shield-check"></i>
+
+                <p>
+                    Your personal information and private verification
+                    details are protected. Only share information
+                    necessary for a safe item return.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Initialize Icons -->
+
+    <script>
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+    </script>
+
+</body>
+
+</html>

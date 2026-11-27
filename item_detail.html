@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="View lost and found item details and discover potential matches with UniFynd.">
+  <title>UniFynd — Item Details</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/item_detail.css">
+</head>
+
+<body>
+  <!-- ================= NAVBAR ================= -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="landing_page.html" aria-label="UniFynd home">
+        <img src="assets/magnifier.png" alt="" class="brand-icon">
+        <span>UniFynd<span class="brand-dot">.</span></span>
+      </a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-controls="nav-content" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="nav-content" id="nav-content">
+        <div class="nav-links">
+          <a href="landing_page.html">Home</a>
+          <a href="browse_items.html">Browse Items</a>
+          <a href="how-it-works.html">How It Works</a>
+        </div>
+        <div class="nav-actions">
+          <a class="login-link" href="login.html">Log In</a>
+          <a class="btn btn-primary signup-link" href="register.html"> Sign Up <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="item-detail-page container">
+    <a href="browse_items.html" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M19 12H5"/><path d="m12 19-7-7 7-7"/>
+    </svg> Back to Browse Items </a>
+    
+    <!-- SUCCESS MESSAGE -->
+    <div class="success-banner" id="success-banner" role="status" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="m8 12 3 3 5-6"/>
+      </svg>
+      <div>
+        <strong>Item reported successfully!</strong>
+        <p>Your listing has been created. UniFynd is searching for potential matches.</p>
+      </div>
+    </div>
+
+    <!-- ITEM LOADING STATE -->
+    <div class="detail-state" id="item-loading" role="status" hidden>
+      <div class="loading-spinner" aria-hidden="true"></div>
+      <h2>Loading item details...</h2>
+      <p>Please wait a moment.</p>
+    </div>
+
+    <!-- ITEM NOT FOUND / ERROR STATE -->
+    <div class="detail-state" id="item-error" role="alert" hidden>
+      <h2 id="item-error-title">Item not found</h2>
+      <p id="item-error-message">
+        This listing may have been removed or is no longer available.
+      </p>
+      <a href="browse_items.html" class="btn btn-primary">
+        Browse Items
+      </a>
+    </div>
+
+    <!-- ================= ITEM CONTENT WILL BE TAKEN FROM DATABASE ================= -->
+    <div id="item-content">
+      <div class="detail-layout">
+        <article class="item-card" aria-labelledby="item-name">
+            <div class="item-photo-section">
+                <div class="item-photo-wrapper">
+                    <img id="item-image" class="item-image" alt="" hidden>
+                    <!-- NO PHOTO PLACEHOLDER -->
+                    <div class="photo-placeholder" id="photo-placeholder">
+                        <svg viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            aria-hidden="true">
+                        <rect x="3" y="3" width="18" height="18" rx="3"/>
+                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                        <path d="m3 17 5-5 4 4 4-6 5 7"/>
+                        </svg>
+                        <span>No photo available</span>
+                    </div>
+                </div>
+            </div>
+
+          <!-- ITEM INFORMATION -->
+            <div class="item-information">
+                <div class="item-badges">
+                    <span class="item-type found" id="item-type">Found</span>
+                    <span class="item-status active" id="item-status"> Active</span>
+                </div>
+
+                <!-- ITEM TITLE -->
+                <h1 id="item-name">Wireless Headphones</h1>
+                <p class="posted-date"> Posted on <time id="posted-date" datetime="2026-11-24">November 24, 2026</time></p>
+                
+                <!-- DESCRIPTION -->
+                <div class="description-section">
+                <h2>Description</h2>
+                <p id="item-description">
+                    Black wireless headphones found in the university
+                    library near the study desks.
+                    The headphones appear to be in good condition.
+                </p>
+                </div>
+
+                <!-- ITEM METADATA -->
+                <dl class="item-metadata">
+                <!-- CATEGORY -->
+                <div class="metadata-row">
+                    <div class="metadata-icon">
+                    <svg viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        aria-hidden="true">
+                        <path d="M20 13 13 20a2 2 0 0 1-3 0l-7-7V3h10l7 7a2 2 0 0 1 0 3Z"/>
+                        <circle cx="7.5" cy="7.5" r="1"/>
+                    </svg>
+                    </div>
+                    <div><dt>Category</dt><dd id="item-category">Electronics</dd></div>
+                </div>
+
+                <!-- CAMPUS -->
+                <div class="metadata-row">
+                    <div class="metadata-icon">
+                    <svg viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        aria-hidden="true">
+                        <path d="m3 9 9-6 9 6"/>
+                        <path d="M3 21h18M5 9h14M7 9v9m5-9v9m5-9v9M5 18h14"/>
+                    </svg>
+                    </div>
+                    <div>
+                    <dt>Campus</dt>
+                    <dd id="item-campus">Kavacık Kuzey Campus</dd>
+                    </div>
+                </div>
+
+                <!-- BUILDING / LOCATION -->
+                <div class="metadata-row">
+                    <div class="metadata-icon">
+                    <svg viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        aria-hidden="true">
+                        <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/>
+                        <circle cx="12" cy="10" r="2.5"/>
+                    </svg>
+                    </div>
+                    <div>
+                    <dt>Building / Location</dt>
+                    <dd id="item-location">Library</dd>
+                    </div>
+                </div>
+
+                <!-- SPECIFIC LOCATION -->
+                <div class="metadata-row" id="specific-location-row">
+                    <div class="metadata-icon">
+                    <svg viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        aria-hidden="true">
+                        <circle cx="12" cy="12" r="8"/>
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M12 2v2m0 16v2M2 12h2m16 0h2"/>
+                    </svg>
+                    </div>
+                    <div>
+                    <dt>Specific Location</dt>
+                    <dd id="item-specific-location">
+                        Second floor, study desks
+                    </dd>
+                    </div>
+                </div>
+
+                <!-- DATE -->
+                <div class="metadata-row">
+                    <div class="metadata-icon">
+                    <svg viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        aria-hidden="true">
+                        <rect x="3" y="5" width="18" height="16" rx="2"/>
+                        <path d="M7 3v4m10-4v4M3 10h18"/>
+                    </svg>
+                    </div>
+                    <div>
+                    <dt id="item-date-label">Date Found</dt>
+                    <dd>
+                        <time id="item-date" datetime="2026-11-23">
+                        November 23, 2026
+                        </time>
+                    </dd>
+                    </div>
+                </div>
+                </dl>
+
+            </div>
+        </article>
+
+        <!-- ================= RIGHT SIDEBAR ================= -->
+
+        <aside class="detail-sidebar">
+
+          <!-- CONTACT CARD -->
+
+          <section class="contact-card" id="contact-card">
+
+            <div class="contact-icon">
+
+              <svg viewBox="0 0 24 24"
+                   fill="none"
+                   stroke="currentColor"
+                   stroke-width="1.6"
+                   aria-hidden="true">
+                <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l1.8-4.2A8.5 8.5 0 1 1 21 11.5Z"/>
+                <path d="M8 10h8M8 14h5"/>
+              </svg>
+
+            </div>
+
+            <h2 id="contact-title">Contact the Finder</h2>
+
+            <p id="contact-description">
+              Think this is your item? Get in touch with the
+              person who found it.
+            </p>
+
+            <button type="button"
+                    class="btn btn-primary contact-button"
+                    id="message-btn"
+                    disabled>
+
+              <svg viewBox="0 0 24 24"
+                   fill="none"
+                   stroke="currentColor"
+                   stroke-width="1.8"
+                   aria-hidden="true">
+                <path d="m22 2-7 20-4-9-9-4 20-7Z"/>
+                <path d="M22 2 11 13"/>
+              </svg>
+
+              <span id="message-btn-text">Send a Message</span>
+
+            </button>
+
+            <!-- OWNERSHIP VERIFICATION NOTICE -->
+
+            <div class="verification-notice" id="verification-notice">
+
+              <svg viewBox="0 0 24 24"
+                   fill="none"
+                   stroke="currentColor"
+                   stroke-width="1.7"
+                   aria-hidden="true">
+                <path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/>
+                <path d="m8 12 3 3 5-6"/>
+              </svg>
+
+              <div>
+                <strong>Ownership Verification</strong>
+                <p>
+                  You may be asked to provide private details
+                  to confirm that the item belongs to you.
+                </p>
+              </div>
+
+            </div>
+
+            <!-- PRIVACY NOTICE -->
+
+            <div class="privacy-notice">
+
+              <svg viewBox="0 0 24 24"
+                   fill="none"
+                   stroke="currentColor"
+                   stroke-width="1.7"
+                   aria-hidden="true">
+                <rect x="5" y="10" width="14" height="11" rx="2"/>
+                <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+                <path d="M12 14v3"/>
+              </svg>
+
+              <p>
+                Your personal contact information stays private.
+                Communication happens through UniFynd.
+              </p>
+
+            </div>
+
+          </section>
+
+          <!-- LISTING MANAGEMENT CARD -->
+
+          <section class="management-card" id="management-card" hidden>
+
+            <div class="contact-icon">
+
+              <svg viewBox="0 0 24 24"
+                   fill="none"
+                   stroke="currentColor"
+                   stroke-width="1.7"
+                   aria-hidden="true">
+                <rect x="5" y="4" width="14" height="17" rx="2"/>
+                <path d="M9 4V2h6v2M9 10h6M9 14h6"/>
+              </svg>
+
+            </div>
+
+            <h2>Manage Your Listing</h2>
+
+            <p>
+              This is your listing. You can update its details
+              or mark the item as returned.
+            </p>
+
+            <div class="management-actions">
+
+              <button type="button"
+                      class="btn btn-primary"
+                      id="edit-item-btn"
+                      disabled>
+                Edit Listing
+              </button>
+
+              <button type="button"
+                      class="btn btn-outline"
+                      id="mark-returned-btn"
+                      disabled>
+                Mark as Returned
+              </button>
+
+            </div>
+
+          </section>
+
+        </aside>
+
+      </div>
+
+      <!-- ================= AI SMART MATCHING ================= -->
+
+      <section class="matching-section" aria-labelledby="matching-heading">
+
+        <!-- MATCHING HEADER -->
+
+        <div class="matching-header">
+
+          <div class="matching-heading-group">
+
+            <div class="matching-icon">
+
+              <svg viewBox="0 0 24 24"
+                   fill="none"
+                   stroke="currentColor"
+                   stroke-width="1.6"
+                   aria-hidden="true">
+                <path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"/>
+                <path d="M20 2v4m-2-2h4M4 18v4m-2-2h4"/>
+              </svg>
+
+            </div>
+
+            <div>
+
+              <h2 id="matching-heading">AI Smart Matching</h2>
+
+              <p>
+                Discover potentially matching items,
+                even when their descriptions are different.
+              </p>
+
+            </div>
+
+          </div>
+
+          <span class="ai-label">AI-Powered</span>
+
+        </div>
+        
+        <!-- MATCHING LOCKED STATE -->
+        <div class="matching-locked" id="matching-locked">
+            <div class="matching-lock-icon">
+                <svg viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    aria-hidden="true">
+                <rect x="5" y="10" width="14" height="11" rx="2"/>
+                <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+                <path d="M12 14v3"/>
+                </svg>
+            </div>
+            <h3>Unlock AI Smart Matching</h3>
+            <p>
+                Log in to discover potential matches and find your
+                belongings faster with AI-powered matching.
+            </p>
+            <a href="login.html"
+                class="btn btn-primary matching-login-btn"
+                id="matching-login-btn">
+                <svg viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    aria-hidden="true">
+                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+                <path d="m10 17 5-5-5-5"/>
+                <path d="M15 12H3"/>
+                </svg>
+                Log In to View Matches
+            </a>
+            <div class="matching-signup">
+                <span>Don't have an account?</span>
+                <a href="register.html" id="matching-signup-link">
+                Sign Up
+                </a>
+            </div>
+        </div>
+        <!-- MATCHING PROGRESS -->
+
+        <div class="matching-progress" id="matching-progress" hidden>
+
+          <div class="progress-information">
+
+            <span id="matching-status" role="status">
+              Ready to search for potential matches
+            </span>
+
+            <strong id="progress-percentage">0%</strong>
+
+          </div>
+
+          <progress class="progress-track"
+                    id="matching-progress-bar"
+                    value="0"
+                    max="100"
+                    aria-label="AI matching progress">
+            0%
+          </progress>
+
+          <p class="progress-description" id="progress-description">
+            UniFynd compares item descriptions to identify possible matches.
+          </p>
+
+        </div>
+
+        <!-- MATCHING RESULTS -->
+
+        <div class="matching-results" id="matching-results" hidden>
+
+          <div class="results-heading">
+
+            <div>
+              <h3>Potential Matches</h3>
+              <p id="match-count" aria-live="polite">
+                0 potential matches found
+              </p>
+            </div>
+
+          </div>
+
+          <!-- MATCH CARDS RENDERED BY TYPESCRIPT -->
+
+          <div class="matches-grid" id="matches-grid"></div>
+
+          <!-- SIMILARITY DISCLAIMER -->
+
+          <div class="matching-disclaimer">
+
+            <svg viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.7"
+                 aria-hidden="true">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 11v5m0-8v.1"/>
+            </svg>
+
+            <p>
+              Similarity scores show how closely item descriptions
+              match. They do not confirm that two listings refer
+              to the same item.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- NO MATCHES STATE -->
+
+        <div class="matching-empty" id="matching-empty" hidden>
+
+          <div class="empty-icon">
+
+            <svg viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.6"
+                 aria-hidden="true">
+              <circle cx="10" cy="10" r="6"/>
+              <path d="m15 15 6 6M7 10h6"/>
+            </svg>
+
+          </div>
+
+          <h3>No potential matches yet</h3>
+
+          <p>
+            We couldn't find a matching listing at the moment.
+            You can check again later as new items are reported.
+          </p>
+
+          <a href="browse_items.html" class="btn btn-outline">
+            Browse Other Items
+          </a>
+
+        </div>
+
+        <!-- MATCHING ERROR STATE -->
+
+        <div class="matching-empty" id="matching-error" hidden>
+
+          <h3>Matching is temporarily unavailable</h3>
+
+          <p>
+            We couldn't complete the matching process.
+            Please try again later.
+          </p>
+
+          <button type="button"
+                  class="btn btn-outline"
+                  id="retry-matching-btn"
+                  disabled>
+            Try Again
+          </button>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+    <!-- ================= MATCH CARD TEMPLATE ================= -->
+    <template id="match-card-template">
+        <article class="match-card">
+            <div class="match-photo-wrapper">
+                <img class="match-image"
+                    alt=""
+                    loading="lazy"
+                    hidden>
+                <div class="match-photo-placeholder"
+                    aria-hidden="true">
+                    <span>⌕</span>
+                </div>
+                <span class="item-type match-type"></span>
+            </div>
+            <div class="match-card-content">
+                <div class="match-card-badges">
+                    <span class="match-category"></span>
+                    <span class="similarity-label"></span>
+                </div>
+                <h3 class="match-name"></h3>
+                <p class="match-description"></p>
+                <div class="match-metadata">
+                    <span class="match-meta-row">
+                        <span class="match-meta-icon"
+                            aria-hidden="true">📍</span>
+                        <span>
+                            <span class="match-campus"></span>
+                            ·
+                            <span class="match-location"></span>
+                        </span>
+                    </span>
+                    <span class="match-meta-row">
+                        <span class="match-meta-icon"
+                            aria-hidden="true">📅</span>
+                        <time class="match-date"></time>
+                    </span>
+                </div>
+                <a class="match-detail-link">
+                    View Details <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+        </article>
+    </template>
+
+  <!-- JAVASCRIPT COMPILED FROM TYPESCRIPT -->
+
+  <script src="js/item_detail.js" defer></script>
+
+</body>
+
+</html>
