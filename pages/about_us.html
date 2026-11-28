@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/css/base.css">
-  <link rel="stylesheet" href="/css/navbar.css">
-  <link rel="stylesheet" href="/css/about_us.css">
+  <link rel="stylesheet" href="/style/base.css">
+  <link rel="stylesheet" href="/style/navbar.css">
+  <link rel="stylesheet" href="/style/about_us.css">
 </head>
 
 <body>
@@ -21,11 +21,11 @@
   <header class="site-header">
     <nav class="nav container" aria-label="Main navigation">
       <!-- Brand -->
-      <a href="/landing_page.html" class="brand" aria-label="UniFynd home">
+      <a href="/pages/landing_page.html" class="brand" aria-label="UniFynd home">
         <img src="/assets/magnifier.png" alt="" class="brand-icon">
         <span>UniFynd<span class="brand-dot">.</span></span>
       </a>
-
+ 
       <!-- Mobile Menu -->
       <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" aria-controls="nav-content">
       <label for="nav-toggle" class="menu-toggle" aria-hidden="true">
@@ -37,18 +37,18 @@
       <!-- Navigation Content -->
       <div class="nav-content" id="nav-content">
         <div class="nav-links">
-          <a href="/landing_page.html">Home</a>
-          <a href="/browse_items.html">Browse Items</a>
-          <a href="/about_us.html" class="active" aria-current="page">About Us</a>
-          <a href="/help_faq.html">FAQ</a>
+          <a href="/pages/landing_page.html">Home</a>
+          <a href="/pages/browse_items.html">Browse Items</a>
+          <a href="/pages/about_us.html" class="active" aria-current="page">About Us</a>
+          <a href="/pages/help_faq.html">FAQ</a>
           <!-- Logged-in User Only -->
-          <a href="/profile.html" class="auth-only" hidden>My Profile</a>
+          <a href="/pages/profile.html" class="auth-only" hidden>My Profile</a>
         </div>
 
         <!-- Guest User Actions -->
         <div class="nav-actions guest-only">
-          <a href="/login.html" class="login-link">Log In</a>
-          <a href="/register.html" class="btn btn-primary signup-link">
+          <a href="/pages/login.html" class="login-link">Log In</a>
+          <a href="/pages/register.html" class="btn btn-primary signup-link">
             Sign Up
             <span aria-hidden="true">↗</span>
           </a>
@@ -63,6 +63,7 @@
             </svg>
             <span class="notification-dot" hidden></span>
           </button>
+          <button type="button" class="logout-button">Log Out</button>
         </div>
       </div>
 
@@ -391,6 +392,7 @@
     </section>
 
   </main>
+  <script src="/js/navbar.js"></script>
 
 </body>
 
